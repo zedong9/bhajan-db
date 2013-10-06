@@ -31,6 +31,12 @@ if ('development' == app.get('env')) {
 app.get('/', routes.index);
 app.get('/users', user.list);
 
-http.createServer(app).listen(app.get('port'), function(){
-  console.log('Express server listening on port ' + app.get('port'));
-});
+// If app.js is started by itself, start the server.
+if (!module.parent) {
+    http.createServer(app).listen(app.get('port'), function(){
+        console.log('Express server listening on port ' + app.get('port'));
+    });
+// Otherwise (for use in test suites), export app variable.
+} else {
+    module.exports = app;
+}
