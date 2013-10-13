@@ -10,22 +10,30 @@ module.exports = {
     */
     findOne: function (data, callback) {
         if (_.isFunction(callback)) {
-            Db.connect('bhajans', function (client, bhajans) {
-                bhajans.findOne(data, function (error, result) {
-                    client.close();
-                    if (error) {
-                        callback(error);
-                        return;
-                    } else {
-                        if (null !== result) {
-                            callback(null, result);
+            Db.connect('bhajans', function (error, client, bhajans) {
+                if (error) {
+                    callback (error);
+                    return;
+                } else {
+                    bhajans.findOne(data, function (error, result) {
+                        client.close();
+                        if (error) {
+                            callback(error);
                             return;
                         } else {
-                            callback(new Error('This bhajan does not exist anymore.'));
-                            return;
+                            if (null !== result) {
+                                callback(null, result);
+                                return;
+                            } else {
+                                var error = new Error();
+                                error.status = 404;
+                                error.message = 'This bhajan does not exist anymore.';
+                                callback(error);
+                                return;
+                            }
                         }
-                    }
-                });
+                    });
+                }
             });
         } else {
             throw {
@@ -45,16 +53,21 @@ module.exports = {
             keys.forEach(function (val, idx) {
                 findObject[val] = {$regex: data[val], $options: 'i'};
             });
-            Db.connect('bhajans', function (client, bhajans) {
-                bhajans.find(findObject).toArray(function (error, result) {
-                    client.close();
-                    if (error) {
-                        callback(error);
-                        return;
-                    } else {
-                        callback(null, result)
-                    }
-                });
+            Db.connect('bhajans', function (error, client, bhajans) {
+                if (error) {
+                    callback (error);
+                    return;
+                } else {
+                    bhajans.find(findObject).sort({title: 1}).toArray(function (error, result) {
+                        client.close();
+                        if (error) {
+                            callback(error);
+                            return;
+                        } else {
+                            callback(null, result)
+                        }
+                    });
+                }
             });
         } else {
             throw {

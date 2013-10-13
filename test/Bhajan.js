@@ -11,22 +11,26 @@ var unique_id_2 = uuid.v4();
 var unique_title = uuid.v4();
 
 before(function (done) {
-    Db.connect('bhajans', function (client, bhajans) {
-        bhajans.remove({test: true}, function (error, result) {
-            if (error) {
-                done(error);
-            } else {
-                bhajans.insert([
-                    {bhajan_id: unique_id_1, title: unique_title, test: true},
-                    {bhajan_id: unique_id_2, title: unique_title, test: true},
-                    {bhajan_id: 'not searchable', title: 'not searchable', test: true}
-                ], function (error) {
-                    if (error) throw error;
-                    client.close();
-                    done();
-                });
-            }
-        });
+    Db.connect('bhajans', function (error, client, bhajans) {
+        if (error) {
+            done(error);
+        } else {
+            bhajans.remove({test: true}, function (error, result) {
+                if (error) {
+                    done(error);
+                } else {
+                    bhajans.insert([
+                        {bhajan_id: unique_id_1, title: unique_title, test: true},
+                        {bhajan_id: unique_id_2, title: unique_title, test: true},
+                        {bhajan_id: 'not searchable', title: 'not searchable', test: true}
+                    ], function (error) {
+                        if (error) throw error;
+                        client.close();
+                        done();
+                    });
+                }
+            });
+        }
     });
 });
 

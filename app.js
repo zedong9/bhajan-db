@@ -38,7 +38,9 @@ if ('development' == app.get('env')) {
 // find bhajan with that id and attach it to req.body.
 app.param('bhajan_id', function (req, res, next, bhajan_id) {
     Bhajan.findOne({bhajan_id: bhajan_id}, function (error, bhajan) {
-        if (error) {
+        if (error && error.status === 404) {
+            res.status(404).render('404');
+        } else if (error) {
             next(error);
         } else {
             req.body.bhajan = bhajan;
@@ -51,8 +53,8 @@ app.param('bhajan_id', function (req, res, next, bhajan_id) {
 app.get('/', routes.index);
 
 // API routes for search & findOne methods.
-app.get('/api/search/:search', api.search);
-app.get('/api/bhajan/:bhajan_id', api.findOne);
+app.get('/search/:search', api.search);
+app.get('/bhajan/:bhajan_id', api.findOne);
 
 // If app.js is started by itself, start the server.
 if (!module.parent) {
