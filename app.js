@@ -10,6 +10,9 @@ var api = require('./routes/api');
 // Load models.
 var Bhajan = require('./models/Bhajan');
 
+// Include config variables.
+var config = require('./config');
+
 // Initialize app.
 var app = express();
 

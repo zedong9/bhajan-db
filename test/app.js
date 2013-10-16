@@ -2,6 +2,7 @@ var expect = require('chai').expect;
 var request = require('superagent');
 var http = require('http');
 var app = require('../app');
+var config = require('../config');
 
 describe('app.js', function () {
 
@@ -16,7 +17,7 @@ describe('app.js', function () {
         request.get('localhost:3000').end(function (res) {
             expect(res).to.exist;
             expect(res.status).to.equal(200);
-            expect(res.text).to.contain('Express');
+            expect(res.text).to.contain(config.name);
         });
     });
 });
