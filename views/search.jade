@@ -1,0 +1,7 @@
+extends default
+
+block content
+    ul
+        for bhajan in result
+            a(href="/bhajan/#{bhajan.bhajan_id}")
+                li= bhajan.title

@@ -1,5 +1,15 @@
 extends default
 
+
 block content
-  h1= title
-  p Welcome to #{name}
+    script(type="text/javascript")
+        $(document).ready(function() {
+            $('#search').on('click', function () {
+                window.location = '/search/' + $('#query').val();
+            });
+        });
+    h1= title
+    p Welcome to #{name}
+    input#query
+    button#search.btn.btn-primary(type="button") Search
+
