@@ -3,6 +3,7 @@ node_js:
 - '0.11'
 - '0.10'
 - '0.8'
+services: mongodb
 env:
   global:
   - secure: bGE7CmKj0M5UfF4zSuJ1cLPBincRf6szOgqJdPEwq4G6TL8d9eDlIkvT2pvhkA9NqZbGJCVMlldHCc8eRQz+bWEG/tNedj7Fhe58fLXUUdpERFEwU3VBF6ZBFK9+uxwguQB2tBGlVQ5snCZ+USQxQ3tvzURxmYCPWDXiVzNT01w=
