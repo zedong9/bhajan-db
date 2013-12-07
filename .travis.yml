@@ -12,3 +12,11 @@ matrix:
   allow_failures:
   - node_js: '0.11'
   - node_js: '0.8'
+deploy:
+  provider: appfog
+  email: sai.gunturi@gmail.com
+  password:
+    secure: pEpTjf6oTG7yoT4d0UJoTwQpXgDrhDQOBN67Ddcem8pmH068BMZzDJWjoZr6IUlLsPNkZSN8OelrM7ummgN3YRABIM6bl6wkE5vdtowoKKSn/gcan/xylJ+12x4hKjfexRqyociNEHsvVJMLpUat6iaPzg3jJVoXc5nZl465Jm4=
+  app: bhajans
+  on:
+    repo: sgunturi/bhajan-db

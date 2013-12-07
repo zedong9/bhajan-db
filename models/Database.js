@@ -6,6 +6,8 @@ var mongoURI;
 
 if (process.env.TRAVIS_SECURE_ENV_VARS) {
     mongoURI = 'mongodb://127.0.0.1:27017/test';
+} else if (process.env.NODE_ENV === 'production') {
+    mongoURI = 'mongodb://' + process.env.DB_USER + ':' + process.env.DB_SECRET + '@paulo.mongohq.com:10080/bhajan-db';
 } else {
     var credentials = require('./db-credentials.json');
     mongoURI = 'mongodb://' + credentials.username + ':' + credentials.password + '@paulo.mongohq.com:10080/bhajan-db';
