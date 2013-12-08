@@ -3,9 +3,17 @@ extends default
 
 block content
     script(type="text/javascript")
+        var search_redirect = function () {
+            window.location = '/search/' + $('#query').val();
+        }
+
         $(document).ready(function() {
             $('#search').on('click', function () {
-                window.location = '/search/' + $('#query').val();
+                search_redirect();
+            });
+
+            $("#query").keydown(function (event) {
+                if (event.keyCode === 13) {search_redirect();}
             });
         });
     h1= title
