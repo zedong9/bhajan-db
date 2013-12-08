@@ -1,7 +1,10 @@
 extends default
 
 block content
-    ul
-        for bhajan in result
-            a(href="/bhajan/#{bhajan.bhajan_id}")
-                li= bhajan.title
+    if result.length > 0
+        ul
+            for bhajan in result
+                a(href="/bhajan/#{bhajan.bhajan_id}")
+                    li= bhajan.title
+    else
+        h2 No matching results found.
