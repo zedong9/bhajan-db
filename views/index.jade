@@ -11,11 +11,12 @@ block content
                 if (event.keyCode === 13) {search_redirect($('#query').val());}
             });
         });
-    .col-md-6.col-md-offset-3
-        .row: .col-md-12: h1.text-center #{project}
-        .row: .col-md-12.input-group
-            label.sr-only(for='query')
-            input#query.col-md-12.form-control(type='text', placeholder='Search bhajan lyrics...')
-            span.input-group-btn
-                button#search.btn.btn-primary(type='submit', role='search') Search
+    .col-lg-6.col-lg-offset-3
+        .row: .col-lg-12: h1.text-center #{project}
+        .row: .col-lg-12
+                label.sr-only(for='query')
+                .input-group
+                    input#query.form-control(type='text', placeholder='Search bhajan lyrics...')
+                    span.input-group-btn
+                        button#search.btn.btn-primary(type='button', role='search') Search
 
