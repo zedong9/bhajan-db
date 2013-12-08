@@ -25,7 +25,7 @@ module.exports = {
                                 callback(null, result);
                                 return;
                             } else {
-                                var error = new Error();
+                                error = new Error();
                                 error.status = 404;
                                 error.message = 'This bhajan does not exist anymore.';
                                 callback(error);
@@ -39,7 +39,7 @@ module.exports = {
             throw {
                 name: 'CallbackError',
                 message: 'Callback not provided.'
-            }
+            };
         }
     },
     /*
@@ -64,7 +64,7 @@ module.exports = {
                             callback(error);
                             return;
                         } else {
-                            callback(null, result)
+                            callback(null, result);
                         }
                     });
                 }
@@ -73,7 +73,7 @@ module.exports = {
             throw {
                 name: 'CallbackError',
                 message: 'Callback not provided'
-            }
+            };
         }
     }
 };

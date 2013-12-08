@@ -27,6 +27,8 @@
     "mocha": "~1.6.0",
     "chai": "~1.8.0",
     "superagent": "~0.15.4",
-    "node-logentries": "~0.1.2"
+    "node-logentries": "~0.1.2",
+    "grunt": "~0.4.2",
+    "grunt-contrib-jshint": "~0.7.2"
   }
 }

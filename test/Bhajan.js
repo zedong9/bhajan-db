@@ -10,6 +10,9 @@ var unique_id_1 = uuid.v4();
 var unique_id_2 = uuid.v4();
 var unique_title = uuid.v4();
 
+// Allow linting to pass.
+/*jshint expr: true*/
+
 before(function (done) {
     Db.connect('bhajans', function (error, client, bhajans) {
         if (error) {

@@ -3,7 +3,7 @@ var Bhajan = require('../models').Bhajan;
 function nl2br (str, is_xhtml) {
     var breakTag = (is_xhtml || typeof is_xhtml === 'undefined') ? '<br ' + '/>' : '<br>';
     return (str + '').replace(/\\n/g, '<br>');
-};
+}
 
 module.exports = {
     findOne: function (req, res) {

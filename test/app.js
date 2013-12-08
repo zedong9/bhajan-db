@@ -3,6 +3,9 @@ var request = require('superagent');
 var http = require('http');
 var app = require('../app');
 
+// Allow jshint to pass.
+/*jshint expr: true*/
+
 describe('app.js', function () {
 
     before(function (done) {
