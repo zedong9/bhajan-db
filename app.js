@@ -1,7 +1,8 @@
 // Load node modules.
-var http = require('http');
-var path = require('path');
 var express = require('express');
+var http = require('http');
+var logentries = require('node-logentries');
+var path = require('path');
 
 // Load route functions.
 var routes = require('./routes');
@@ -12,6 +13,10 @@ var Bhajan = require('./models/Bhajan');
 
 // Include config variables.
 var config = require('./config');
+
+var log = logentries.logger({
+    token:process.env.LOGENTRIES_TOKEN
+});
 
 // Initialize app.
 var app = express();
@@ -30,18 +35,24 @@ app.use(require('less-middleware')({ src: __dirname + '/public' })); // use LESS
 app.use(express.static(path.join(__dirname, 'public'))); // Look in public directory if no other routes match.
 
 // If running in development, use express's error handler function.
-if ('development' == app.get('env')) {
+if ('development' === app.get('env')) {
     app.use(express.errorHandler());
+} else if ('production' === app.get('env')) {
+    app.use(function (err, req, res, next) {
+        log.err(err);
+        res.status(500).render('500');
+    })
 }
 
 // If param 'bhajan_id' is present in the route,
 // find bhajan with that id and attach it to req.body.
 app.param('bhajan_id', function (req, res, next, bhajan_id) {
-    Bhajan.findOne({bhajan_id: bhajan_id}, function (error, bhajan) {
-        if (error && error.status === 404) {
+    Bhajan.findOne({bhajan_id: bhajan_id}, function (err, bhajan) {
+        if (err && err.status === 404) {
             res.status(404).render('404');
-        } else if (error) {
-            next(error);
+            log.err(err);
+        } else if (err) {
+            next(err);
         } else {
             req.body.bhajan = bhajan;
             next();
