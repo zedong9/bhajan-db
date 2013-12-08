@@ -1,5 +1,4 @@
-var config = require('../config'); // include config variables
-
-exports.index = function(req, res){
-    res.render('index', config);
+exports.index = function(req, res) {
+    res.locals.title = 'Home';
+    res.render('index');
 };

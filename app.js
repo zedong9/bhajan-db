@@ -2,6 +2,7 @@
 var express = require('express');
 var http = require('http');
 var logentries = require('node-logentries');
+var moment = require('moment');
 var path = require('path');
 
 // Load route functions.
@@ -10,9 +11,6 @@ var api = require('./routes/api');
 
 // Load models.
 var Bhajan = require('./models/Bhajan');
-
-// Include config variables.
-var config = require('./config');
 
 var log = logentries.logger({
     token:process.env.LOGENTRIES_TOKEN
@@ -58,6 +56,13 @@ app.param('bhajan_id', function (req, res, next, bhajan_id) {
             next();
         }
     });
+});
+
+// Add global config variables.
+app.locals({
+    author: 'teamswami',
+    project: 'BhajanDB',
+    year: moment().format('YYYY'),
 });
 
 // Route for homepage.

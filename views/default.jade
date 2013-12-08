@@ -1,9 +1,40 @@
 doctype 5
 html
-  head
-    title= title
-    script(type="text/javascript", src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js")
-    script(type="text/javascript", src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/js/bootstrap.min.js")
-    link(rel='stylesheet', href='//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/css/bootstrap.min.css')
-  body
-    block content
+    head
+        title #{title} - #{project}
+        meta(name='viewport', content='width=device-width, initial-scale=1.0')
+        script(type='text/javascript', src='//cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js')
+        script(type='text/javascript', src='//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.2/js/bootstrap.min.js')
+        link(rel='stylesheet', href='//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.2/css/bootstrap.min.css')
+        script.
+            var search_redirect = function (query) {
+                window.location = '/search/' + query;
+            }
+
+            $(document).ready(function() {
+                $('#navbar_search').on('click', function () {
+                    search_redirect($('#navbar_query').val());
+                });
+
+                $('#navbar_query').keydown(function (event) {
+                    if (event.keyCode === 13) {search_redirect($('#navbar_query').val());}
+                });
+            });
+    body
+        nav.navbar.navbar-default
+            .navbar-header
+                a.navbar-brand(href='/') #{project}
+            form.navbar-form.pull-right(role='search')
+                .form-group.col-md-8
+                    label.sr-only(for='navbar_query')
+                    input#navbar_query.form-control(type='text', placeholder='Search lyrics...')
+                button#navbar_search.btn.btn-primary.search-submit(type='button')
+                    i.glyphicon.glyphicon-search
+        .container
+            .row: .col-md-8.col-md-offset-2: block content
+            footer
+                hr
+                .row
+                    .col-md-6.text-muted.text-left love all, serve all.
+                    .col-md-6.text-muted.text-right #{author}, #{year}.
+

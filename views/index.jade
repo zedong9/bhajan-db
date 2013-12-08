@@ -1,23 +1,21 @@
 extends default
 
-
 block content
-    script(type="text/javascript")
-        var search_redirect = function () {
-            window.location = '/search/' + $('#query').val();
-        }
-
+    script.
         $(document).ready(function() {
             $('#search').on('click', function () {
-                search_redirect();
+                search_redirect($('#query').val());
             });
 
-            $("#query").keydown(function (event) {
-                if (event.keyCode === 13) {search_redirect();}
+            $('#query').keydown(function (event) {
+                if (event.keyCode === 13) {search_redirect($('#query').val());}
             });
         });
-    h1= title
-    p Welcome to #{name}
-    input#query(placeholder='Search bhajan lyrics...')
-    button#search.btn.btn-primary(type="button") Search
+    .col-md-6.col-md-offset-3
+        .row: .col-md-12: h1.text-center #{project}
+        .row: .col-md-12.input-group
+            label.sr-only(for='query')
+            input#query.col-md-12.form-control(type='text', placeholder='Search bhajan lyrics...')
+            span.input-group-btn
+                button#search.btn.btn-primary(type='submit', role='search') Search
 
