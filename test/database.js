@@ -3,6 +3,9 @@ var request = require('superagent');
 
 var db_location = 'localhost:28017';
 
+// Allow linting to pass.
+/*jshint expr: true*/
+
 describe('Database', function () {
     it('should be running.', function () {
         request.get(db_location).end(function (res) {

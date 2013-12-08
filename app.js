@@ -39,7 +39,7 @@ if ('development' === app.get('env')) {
     app.use(function (err, req, res, next) {
         log.err(err);
         res.status(500).render('500');
-    })
+    });
 }
 
 // If param 'bhajan_id' is present in the route,
