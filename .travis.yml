@@ -20,6 +20,5 @@ deploy:
   app:
     production: bhajans
     master: bhajans-beta
-  skip_cleanup: true
   on:
     node: '0.8'
