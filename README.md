@@ -14,8 +14,6 @@ npm install
 Decrypt database credentials:
 ```sh
 make decrypt_creds
-Contact sai.gunturi@gmail.com for the password.
-openssl cast5-cbc -d -in models/db-credentials.json.cast5 -out models/db-credentials.json
 enter cast5-cbc decryption password:
 ```
 After entering the password, you should be good to go. Fire up the app:
