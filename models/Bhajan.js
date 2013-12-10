@@ -1,7 +1,7 @@
 var mongodb = require('mongodb');
 var _ = require('underscore');
 
-var Db = require('./Database');
+var db = require('./Database');
 
 module.exports = {
     /*
@@ -10,7 +10,7 @@ module.exports = {
     */
     findOne: function (data, callback) {
         if (_.isFunction(callback)) {
-            Db.connect('bhajans', function (error, client, bhajans) {
+            db.connect('bhajans', function (error, client, bhajans) {
                 if (error) {
                     callback (error);
                     return;
@@ -53,7 +53,7 @@ module.exports = {
             keys.forEach(function (val, idx) {
                 findObject[val] = {$regex: data[val], $options: 'i'};
             });
-            Db.connect('bhajans', function (error, client, bhajans) {
+            db.connect('bhajans', function (error, client, bhajans) {
                 if (error) {
                     callback (error);
                     return;
