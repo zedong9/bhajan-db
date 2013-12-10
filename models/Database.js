@@ -1,7 +1,6 @@
 var mongodb = require('mongodb');
 var _ = require('underscore');
 
-
 var mongoURI;
 
 if (process.env.TRAVIS_SECURE_ENV_VARS) {
@@ -13,7 +12,6 @@ if (process.env.TRAVIS_SECURE_ENV_VARS) {
     mongoURI = 'mongodb://' + credentials.username + ':' + credentials.password + '@paulo.mongohq.com:10080/bhajan-db';
 }
 
-
 module.exports = {
     /*
     * Connect: Accepts collection name, callback. Returns
@@ -21,7 +19,7 @@ module.exports = {
     */
     connect: function (collection_name, callback) {
         if (!_.isFunction(callback)) {
-            callback(new Error('callback is not a function.'));
+            callback(new Error('Callback is not a function.'));
             return;
         } else {
             mongodb.MongoClient.connect(mongoURI, function (error, database) {

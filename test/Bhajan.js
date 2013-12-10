@@ -4,7 +4,7 @@ var uuid = require('node-uuid');
 var _ = require('underscore');
 
 var Bhajan = require('../models/Bhajan');
-var Db = require('../models/Database');
+var db = require('../models/Database');
 
 var unique_id_1 = uuid.v4();
 var unique_id_2 = uuid.v4();
@@ -14,7 +14,7 @@ var unique_title = uuid.v4();
 /*jshint expr: true*/
 
 before(function (done) {
-    Db.connect('bhajans', function (error, client, bhajans) {
+    db.connect('bhajans', function (error, client, bhajans) {
         if (error) {
             done(error);
         } else {
