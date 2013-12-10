@@ -11,6 +11,8 @@ module.exports = function (grunt) {
         release: {
             options: {
                 npm: false,
+                push: false,
+                pushTags: false,
                 commitMessage: 'Bump to <%= version %>.',
                 github: {
                     repo: 'sgunturi/bhajan-db'
