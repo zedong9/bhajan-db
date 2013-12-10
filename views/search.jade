@@ -1,10 +1,17 @@
 extends default
 
 block content
+    h2 #{result.length} results found for '#{search}'
+    hr
     if result.length > 0
-        ul
-            for bhajan in result
-                a(href="/bhajan/#{bhajan.bhajan_id}")
-                    li= bhajan.title
+        table.table.table-hover
+            thead
+                th Title
+                th.hidden-xs Language
+            tbody
+                for bhajan in result
+                    tr
+                        td: a(href='/bhajan/#{bhajan.bhajan_id}') #{bhajan.title}
+                        td.hidden-xs= bhajan.language
     else
-        h2 No matching results found.
+        p We're working on adding more bhajans! Check back again soon.

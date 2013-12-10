@@ -17,6 +17,7 @@ module.exports = {
                 res.send(error);
             } else {
                 res.locals.result = result;
+                res.locals.search = req.params.search;
                 res.locals.title = 'Search results for "' + req.params.search + '"';
                 res.render('search');
             }
