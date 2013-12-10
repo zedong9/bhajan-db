@@ -13,10 +13,7 @@ module.exports = function (grunt) {
                 npm: false,
                 push: false,
                 pushTags: false,
-                commitMessage: 'Bump to <%= version %>.',
-                github: {
-                    repo: 'sgunturi/bhajan-db'
-                }
+                commitMessage: 'Bump to <%= version %>.'
             }
         },
         gitcheckout: {
@@ -39,7 +36,7 @@ module.exports = function (grunt) {
             }
         },
         gitmerge: {
-            'master ff': {
+            master: {
                 options: {branch: 'master', ffOnly: true}
             }
         }
@@ -54,9 +51,9 @@ module.exports = function (grunt) {
     grunt.registerTask('lint', 'jshint:default');
     grunt.registerTask('lint-master', ['gitcheckout:master', 'lint']);
 
-    grunt.registerTask('update production', ['gitcheckout:production', 'gitmerge:master ff']);
-    grunt.registerTask('push master and production', ['gitpush:master', 'gitpush:production']);
+    grunt.registerTask('update-production', ['gitcheckout:production', 'gitmerge:master']);
+    grunt.registerTask('push-master-production', ['gitpush:master', 'gitpush:production']);
 
-    grunt.registerTask('production', ['lint-master', 'release', 'update production', 'push master and production']);
-    grunt.registerTask('production-minor', ['lint-master', 'release:minor', 'update production', 'push master and production']);
+    grunt.registerTask('production', ['lint-master', 'release', 'update-production', 'push-master-production']);
+    grunt.registerTask('production-minor', ['lint-master', 'release:minor', 'update-production', 'push-master-production']);
 };
