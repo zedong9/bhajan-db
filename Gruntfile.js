@@ -25,9 +25,7 @@ module.exports = function (grunt) {
             }
         },
         gitpush: {
-            options: {
-                tags: true
-            },
+            options: {tags: true},
             master: {
                 options: {branch: 'master'}
             },
@@ -39,6 +37,12 @@ module.exports = function (grunt) {
             master: {
                 options: {branch: 'master', ffOnly: true}
             }
+        },
+        mochacli: {
+            all: ['test/*.js'],
+            options: {
+                reporter: 'spec'
+            }
         }
     });
 
@@ -46,6 +50,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-release');
     grunt.loadNpmTasks('grunt-git');
+    grunt.loadNpmTasks('grunt-mocha-cli');
 
     // Register our tasks.
     grunt.registerTask('lint', 'jshint:default');
@@ -54,6 +59,8 @@ module.exports = function (grunt) {
     grunt.registerTask('update-production', ['gitcheckout:production', 'gitmerge:master']);
     grunt.registerTask('push-master-production', ['gitpush:master', 'gitpush:production']);
 
-    grunt.registerTask('production', ['lint-master', 'release', 'update-production', 'push-master-production']);
-    grunt.registerTask('production-minor', ['lint-master', 'release:minor', 'update-production', 'push-master-production']);
+    grunt.registerTask('production', ['lint-master', 'test', 'release', 'update-production', 'push-master-production']);
+    grunt.registerTask('production-minor', ['lint-master', 'test', 'release:minor', 'update-production', 'push-master-production']);
+
+    grunt.registerTask('test', 'mochacli');
 };
