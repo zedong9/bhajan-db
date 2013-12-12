@@ -21,13 +21,13 @@
     "shortid": "2.0.0",
     "underscore": "~1.5.2",
     "underscore.string": "2.3.3",
-    "node-logentries": "~0.1.2"
+    "node-logentries": "~0.1"
   },
   "devDependencies": {
     "mocha": "~1.6.0",
     "chai": "~1.8.0",
     "superagent": "~0.15.4",
-    "node-logentries": "~0.1.2",
+    "node-logentries": "~0.1",
     "grunt": "~0.4.2",
     "grunt-contrib-jshint": "~0.7.2",
     "grunt-release": "~0.6.0",
