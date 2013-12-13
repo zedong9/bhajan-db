@@ -14,7 +14,7 @@ module.exports = {
     },
 
     findAll: function (req, res, next) {
-        Bhajan.search({}, function (error, result) {
+        Bhajan.search({test: 'test_'}, function (error, result) {
             if (error) next(error);
             else res.json(result);
         });

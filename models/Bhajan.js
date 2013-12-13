@@ -1,9 +1,30 @@
+var moment = require('moment');
 var mongodb = require('mongodb');
 var _ = require('underscore');
 
 var db = require('./Database');
 
 module.exports = {
+    update: function (data, done) {
+        data.updatedAt = moment().toDate();
+        db.connect('bhajans', function (error, client, bhajans) {
+            if (error) return done(error);
+
+            bhajans.findOne({bhajan_id: data.bhajan_id}, function (error, bhajan) {
+                if (error) return done(error);
+                if (!bhajan) return done(new Error('No bhajan found to update.'));
+
+                delete bhajan._id;
+                var updated = _.extend(bhajan, data);
+                bhajans.update({bhajan_id: data.bhajan_id}, {$set: updated}, function (error, result) {
+                    if (error) return done(error);
+                    client.close();
+                    return done(null, updated);
+                });
+            });
+        });
+    },
+
     /*
     * Find One: accepts JSON filter {field: value}, callback. Returns
     * result as JS object if found, else error.
