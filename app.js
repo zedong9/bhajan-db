@@ -1,7 +1,6 @@
 // Load node modules.
 var express = require('express');
 var http = require('http');
-var logentries = require('node-logentries');
 var moment = require('moment');
 var path = require('path');
 
@@ -11,10 +10,6 @@ var api = require('./routes/api');
 
 // Load models.
 var Bhajan = require('./models/Bhajan');
-
-var log = logentries.logger({
-    token:process.env.LOGENTRIES_TOKEN
-});
 
 // Initialize app.
 var app = express();
@@ -37,7 +32,7 @@ if ('development' === app.get('env')) {
     app.use(express.errorHandler());
 } else if ('production' === app.get('env')) {
     app.use(function (err, req, res, next) {
-        log.err(err);
+        console.log(err);
         res.status(500).render('500');
     });
 }
@@ -48,7 +43,7 @@ app.param('bhajan_id', function (req, res, next, bhajan_id) {
     Bhajan.findOne({bhajan_id: bhajan_id}, function (err, bhajan) {
         if (err && err.status === 404) {
             res.status(404).render('404');
-            log.err(err);
+            console.log(err);
         } else if (err) {
             next(err);
         } else {
