@@ -12,5 +12,5 @@ deploy:
   api_key:
     secure: oLNZEdW6IT4ReDRWq8wGlu790BtRsxzt03aeEInC9u9HO3+uP+deXUnfaSU+8dimTyNzkpjovbnCTKvxlVxAgopXvUxEi62f66fX0R64xPNMJdyFAitAw8rYhGobw/cxPheWPE+zNvv7ojeifwghwcYQTQZKh9VC7GJL8yxXKqU=
   app: bhajandb
-  on: master
+  on: production
   strategy: git
