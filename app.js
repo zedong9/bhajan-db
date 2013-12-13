@@ -11,6 +11,9 @@ var api = require('./routes/api');
 // Load models.
 var Bhajan = require('./models/Bhajan');
 
+// Load app info.
+var info = require('./package.json');
+
 // Initialize app.
 var app = express();
 
@@ -58,6 +61,8 @@ app.locals({
     author: 'teamswami',
     project: 'BhajanDB',
     year: moment().format('YYYY'),
+    version: info.version,
+    repo: info.repository.url,
 });
 
 // Route for homepage.
