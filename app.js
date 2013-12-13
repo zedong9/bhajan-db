@@ -10,6 +10,7 @@ var api = require('./routes/api');
 
 // Load models.
 var Bhajan = require('./models/Bhajan');
+var Quote = require('./models/Quote');
 
 // Load app info.
 var info = require('./package.json');
@@ -63,6 +64,7 @@ app.locals({
     year: moment().format('YYYY'),
     version: info.version,
     repo: info.repository.url,
+    quote: Quote()
 });
 
 // Route for homepage.
