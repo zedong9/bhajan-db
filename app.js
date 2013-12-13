@@ -20,10 +20,10 @@ app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname + '/views'); // set views directory.
 app.set('view engine', 'jade'); // use jade to render views.
 app.use(express.favicon());
-app.use(express.logger('dev'));
 app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(app.router); // use specified route functions.
+app.use(express.logger('dev'));
 app.use(require('less-middleware')({ src: __dirname + '/public' })); // use LESS to render CSS.
 app.use(express.static(path.join(__dirname, 'public'))); // Look in public directory if no other routes match.
 
@@ -66,6 +66,16 @@ app.get('/', routes.index);
 // API routes for search & findOne methods.
 app.get('/search/:search', api.search);
 app.get('/bhajan/:bhajan_id', api.findOne);
+
+// Error route to test error handling.
+app.get('/error', function (req, res, next) {
+    return next(new Error('An error has been thrown.'));
+});
+
+// Handle all other routes with 404.
+app.get('*', function (req, res, next) {
+    res.status(404).render('404');
+});
 
 // If app.js is started by itself, start the server.
 if (!module.parent) {
