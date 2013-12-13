@@ -10,6 +10,9 @@
     "start": "node app.js",
     "test": "mocha"
   },
+  "engines": {
+    "node": ">=0.8"
+  },
   "dependencies": {
     "async": "0.2.9",
     "express": "3.3.4",
