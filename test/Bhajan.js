@@ -3,7 +3,7 @@ var moment = require('moment');
 var uuid = require('node-uuid');
 var _ = require('underscore');
 
-var models = require('../models')
+var models = require('../models');
 var Bhajan = models.Bhajan;
 var db = models.Database;
 
@@ -119,4 +119,4 @@ after(function (done) {
             });
         }
     });
-})
+});
