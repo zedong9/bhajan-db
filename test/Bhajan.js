@@ -15,13 +15,11 @@ var unique_title = uuid.v4();
 
 before(function (done) {
     db.connect('bhajans', function (error, client, bhajans) {
-        if (error) {
-            done(error);
-        } else {
+        if (error) done(error);
+        else {
             bhajans.remove({test: true}, function (error, result) {
-                if (error) {
-                    done(error);
-                } else {
+                if (error) done(error);
+                else {
                     bhajans.insert([
                         {bhajan_id: unique_id_1, title: unique_title, test: true, approved: true},
                         {bhajan_id: unique_id_2, title: unique_title, test: true, approved: true},
@@ -46,16 +44,14 @@ describe('Bhajan findOne', function () {
 
     it('should not find more than one result.', function (next) {
         Bhajan.findOne({bhajan_id: unique_id_1}, function (error, result) {
-            if (error) {
-                next(error);
-            } else {
+            if (error) next(error);
+            else {
                 expect(result).to.be.an('object');
                 expect(result.bhajan_id).to.equal(unique_id_1);
 
                 Bhajan.findOne({bhajan_id: unique_id_2}, function (error, result) {
-                    if (error) {
-                        next(error);
-                    } else {
+                    if (error) next(error);
+                    else {
                         expect(result).to.be.an('object');
                         expect(result.bhajan_id).to.equal(unique_id_2);
                         next();
@@ -83,9 +79,8 @@ describe('Bhajan search', function () {
 
     it('should return an array of objects.', function (next) {
         Bhajan.search({title: unique_title}, function (error, result) {
-            if (error) {
-                next(error);
-            } else {
+            if (error) next(error);
+            else {
                 expect(result).to.be.an('array');
                 expect(result.length).to.equal(2);
                 next();
@@ -95,9 +90,8 @@ describe('Bhajan search', function () {
 
     it('should be case insensitive.', function (next) {
         Bhajan.search({title: unique_title.toUpperCase()}, function (error, result) {
-            if (error) {
-                next(error);
-            } else {
+            if (error) next(error);
+            else {
                 expect(result).to.be.an('array');
                 expect(result.length).to.equal(2);
                 next();
@@ -107,9 +101,8 @@ describe('Bhajan search', function () {
 
     it('should return an empty array if no search results.', function (next) {
         Bhajan.search({title: 'This bhajan doesn\'t exist'}, function (error, result) {
-            if (error) {
-                next(error);
-            } else {
+            if (error) next(error);
+            else {
                 expect(result).to.be.an('array');
                 expect(result.length).to.equal(0);
                 next();
