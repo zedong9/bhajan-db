@@ -6,16 +6,16 @@ module.exports = {
         res.json(req.body.bhajan);
     },
 
-    search: function (req, res) {
+    search: function (req, res, next) {
         Bhajan.search({lyrics: req.params.search}, function (error, result) {
-            if (error) res.send(error);
+            if (error) next(error);
             else res.json(result);
         });
     },
 
-    findAll: function (req, res) {
+    findAll: function (req, res, next) {
         Bhajan.search({}, function (error, result) {
-            if (error) throw error;
+            if (error) next(error);
             else res.json(result);
         });
     }

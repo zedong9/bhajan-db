@@ -5,4 +5,5 @@ block content
         h3 #{title}
         div !{lyrics}
         br
-        p #{translation}
+        unless language === 'english'
+            p.text-muted #{translation}

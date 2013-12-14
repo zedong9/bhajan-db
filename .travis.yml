@@ -3,14 +3,9 @@ node_js:
 - '0.10'
 - '0.8'
 services: mongodb
-env:
-  global:
-  - secure: bGE7CmKj0M5UfF4zSuJ1cLPBincRf6szOgqJdPEwq4G6TL8d9eDlIkvT2pvhkA9NqZbGJCVMlldHCc8eRQz+bWEG/tNedj7Fhe58fLXUUdpERFEwU3VBF6ZBFK9+uxwguQB2tBGlVQ5snCZ+USQxQ3tvzURxmYCPWDXiVzNT01w=
-  - secure: fq1yycTKjBUfGc0wafWOXMXhHyxbUTq7cNK1Hd5JHsMPifsv5a8B5ZPVa5WXF4mPY3l2yJCgPYVieaiPLvO9x5XHHgImuXRfBzKGbrEAOZD12qpNuWM3YEqmxgKxGSptYbQM1dDn3GLZeojLUJLwkqS+Dzw66HhQbcG2YDGepFc=
 deploy:
   provider: heroku
   api_key:
     secure: oLNZEdW6IT4ReDRWq8wGlu790BtRsxzt03aeEInC9u9HO3+uP+deXUnfaSU+8dimTyNzkpjovbnCTKvxlVxAgopXvUxEi62f66fX0R64xPNMJdyFAitAw8rYhGobw/cxPheWPE+zNvv7ojeifwghwcYQTQZKh9VC7GJL8yxXKqU=
   app: bhajandb
   on: production
-  strategy: git

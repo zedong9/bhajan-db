@@ -113,7 +113,7 @@ after(function (done) {
         if (error) done(error);
         else {
             bhajans.remove({test: test_id}, function (error) {
-                if (error) throw error;
+                if (error) done(error);
                 client.close();
                 done();
             });
