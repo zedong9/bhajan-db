@@ -3,12 +3,15 @@ var moment = require('moment');
 var uuid = require('node-uuid');
 var _ = require('underscore');
 
-var Bhajan = require('../models/Bhajan');
-var db = require('../models/Database');
+var models = require('../models')
+var Bhajan = models.Bhajan;
+var db = models.Database;
 
 var unique_id_1 = uuid.v4();
 var unique_id_2 = uuid.v4();
 var unique_title = uuid.v4();
+
+var test_id = 'test_' + uuid.v4();
 
 // Allow linting to pass.
 /*jshint expr: true*/
@@ -17,20 +20,15 @@ before(function (done) {
     db.connect('bhajans', function (error, client, bhajans) {
         if (error) done(error);
         else {
-            bhajans.remove({test: true}, function (error, result) {
-                if (error) done(error);
-                else {
-                    bhajans.insert([
-                        {bhajan_id: unique_id_1, title: unique_title, test: true, approved: true},
-                        {bhajan_id: unique_id_2, title: unique_title, test: true, approved: true},
-                        {bhajan_id: unique_id_2, title: unique_title, test: true, approved: false},
-                        {bhajan_id: 'not searchable', title: 'not searchable', test: true}
-                    ], function (error) {
-                        if (error) throw error;
-                        client.close();
-                        done();
-                    });
-                }
+            bhajans.insert([
+                {bhajan_id: unique_id_1, title: unique_title, test: test_id, approved: true},
+                {bhajan_id: unique_id_2, title: unique_title, test: test_id, approved: true},
+                {bhajan_id: unique_id_2, title: unique_title, test: test_id, approved: false},
+                {bhajan_id: 'not searchable', title: 'not searchable', test: test_id}
+            ], function (error) {
+                if (error) throw error;
+                client.close();
+                done();
             });
         }
     });
@@ -71,7 +69,6 @@ describe('Bhajan findOne', function () {
 });
 
 describe('Bhajan search', function () {
-
     it('should be a function.', function (next) {
         expect(Bhajan.search).to.be.a('function');
         next();
@@ -110,3 +107,16 @@ describe('Bhajan search', function () {
         });
     });
 });
+
+after(function (done) {
+    db.connect('bhajans', function (error, client, bhajans) {
+        if (error) done(error);
+        else {
+            bhajans.remove({test: test_id}, function (error) {
+                if (error) throw error;
+                client.close();
+                done();
+            });
+        }
+    });
+})
