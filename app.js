@@ -74,6 +74,11 @@ app.get('/', routes.index);
 app.get('/search/:search', routes.bhajan.search);
 app.get('/bhajan/:bhajan_id', routes.bhajan.findOne);
 
+// API routes to send data as JSON.
+app.get('/api/search/:search', routes.api.search);
+app.get('/api/bhajan', routes.api.findAll);
+app.get('/api/bhajan/:bhajan_id', routes.api.findOne);
+
 // Error route to test error handling.
 app.get('/error', function (req, res, next) {
     return next(new Error('A test error has been thrown.'));

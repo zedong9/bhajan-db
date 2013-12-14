@@ -60,7 +60,7 @@ module.exports = {
                     return;
                 } else {
                     find.approved = true;
-                    bhajans.find(find).sort({title: 1}).toArray(function (error, result) {
+                    bhajans.find(find, {_id: 0}).sort({title: 1}).toArray(function (error, result) {
                         client.close();
                         if (error) {
                             callback(error);
