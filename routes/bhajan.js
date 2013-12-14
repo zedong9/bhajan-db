@@ -12,11 +12,11 @@ module.exports = {
         bhajan.lyrics = nl2br(bhajan.lyrics); // Replace newline characters with <br>.
         res.render('bhajan', bhajan);
     },
+
     search: function (req, res) {
         Bhajan.search({lyrics: req.params.search}, function (error, result) {
-            if (error) {
-                res.send(error);
-            } else {
+            if (error) res.send(error);
+            else {
                 res.locals.result = result;
                 res.locals.search = req.params.search;
                 res.locals.title = 'Search results for "' + req.params.search + '"';

@@ -6,7 +6,6 @@ var path = require('path');
 
 // Load route functions.
 var routes = require('./routes');
-var api = require('./routes/api');
 
 // Load models.
 var models = require('./models');
@@ -71,13 +70,13 @@ app.locals({
 // Route for homepage.
 app.get('/', routes.index);
 
-// API routes for search & findOne methods.
-app.get('/search/:search', api.search);
-app.get('/bhajan/:bhajan_id', api.findOne);
+// Routes for search & individual bhajan views.
+app.get('/search/:search', routes.bhajan.search);
+app.get('/bhajan/:bhajan_id', routes.bhajan.findOne);
 
 // Error route to test error handling.
 app.get('/error', function (req, res, next) {
-    return next(new Error('An error has been thrown.'));
+    return next(new Error('A test error has been thrown.'));
 });
 
 // Handle all other routes with 404.
