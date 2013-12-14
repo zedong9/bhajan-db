@@ -3,9 +3,6 @@ module.exports = function (grunt) {
         jshint: {
             default: {
                 src: ['**/*.js', '!node_modules/**/*']
-            },
-            single: {
-                src: grunt.option('file')
             }
         },
         release: {
@@ -52,15 +49,17 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-git');
     grunt.loadNpmTasks('grunt-mocha-cli');
 
-    // Register our tasks.
-    grunt.registerTask('lint', 'jshint:default');
-    grunt.registerTask('lint-master', ['gitcheckout:master', 'lint']);
-
-    grunt.registerTask('update-production', ['gitcheckout:production', 'gitmerge:master']);
-    grunt.registerTask('push-master-production', ['gitpush:master', 'gitpush:production']);
-
-    grunt.registerTask('production', ['lint-master', 'test', 'release', 'update-production', 'push-master-production']);
-    grunt.registerTask('production-minor', ['lint-master', 'test', 'release:minor', 'update-production', 'push-master-production']);
-
+    // Register our basic tasks.
+    grunt.registerTask('default', 'build');
     grunt.registerTask('test', 'mochacli');
+
+    grunt.registerTask('build', ['jshint:default', 'test']);
+    grunt.registerTask('build:master', ['gitcheckout:master', 'build']);
+
+    // Build deployment tasks.
+    grunt.registerTask('deploy', ['gitcheckout:production', 'gitmerge:master', 'gitpush:master', 'gitpush:production', 'gitcheckout:master']);
+
+    grunt.registerTask('production', ['build:master', 'release', 'deploy']);
+    grunt.registerTask('production:minor', ['build:master', 'release:minor', 'deploy']);
+
 };
