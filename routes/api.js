@@ -1,4 +1,5 @@
-var Bhajan = require('../models').Bhajan;
+var models = require('../models');
+var Bhajan = models.Bhajan;
 
 function nl2br (str, is_xhtml) {
     var breakTag = (is_xhtml || typeof is_xhtml === 'undefined') ? '<br ' + '/>' : '<br>';

@@ -9,8 +9,9 @@ var routes = require('./routes');
 var api = require('./routes/api');
 
 // Load models.
-var Bhajan = require('./models/Bhajan');
-var Quote = require('./models/Quote');
+var models = require('./models');
+var Bhajan = models.Bhajan;
+var Quote = models.Quote;
 
 // Load app info.
 var info = require('./package.json');
