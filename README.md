@@ -1,7 +1,10 @@
 BhajanDB [![Build Status] (https://travis-ci.org/sgunturi/bhajan-db.png?branch=master)](https://travis-ci.org/sgunturi/bhajan-db)
 =========
 
-A project for making finding and sharing new bhajans easier.
+A project for making finding and sharing new Sai bhajans easier by providing:
+
+* users with a website to search for bhajans and upload new ones.
+* developers with a read-only API for creating their own bhajans database.
 
 ## Installation
 
@@ -24,7 +27,14 @@ npm start
 > node app.js
 Express server listening on port 3000
 ```
-BhajanDB should be running at localhost:3000!
+BhajanDB should be running at localhost:3000.
+
+## Contributing
+
+* Make sure you're on the latest version of master.
+* Develop in a topic branch, not master.
+* Lint and test with `grunt` command.
+* Squash your commits before creating a pull request.
 
 ## Tests
 
