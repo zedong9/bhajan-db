@@ -7,7 +7,7 @@ html
         script(type='text/javascript', src='//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.2/js/bootstrap.min.js')
         link(rel='stylesheet', href='//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.2/css/bootstrap.min.css')
         script.
-            var search_redirect = function (query) {
+            function search_redirect(query) {
                 if (query !== '') {
                     window.location = '/search/' + query;
                 }
@@ -19,7 +19,10 @@ html
                 });
 
                 $('#navbar-query').keydown(function (event) {
-                    if (event.keyCode === 13) {search_redirect($('#navbar-query').val());}
+                    if (event.keyCode === 13) {
+                        event.preventDefault();
+                        search_redirect($('#navbar-query').val());
+                    }
                 });
             });
     body
@@ -36,9 +39,9 @@ html
                     #navbar-collapse.collapse.navbar-collapse
                         form.navbar-form(role='search')
                             .form-group.col-lg-10.col-xs-10
-                                label.sr-only(for='navbar_query')
+                                label.sr-only(for='navbar-query')
                                 input#navbar-query.form-control.col-lg-12(type='text', placeholder='Search lyrics...')
-                            button#navbar-search.btn.btn-primary(type='button')
+                            button#navbar-search.btn.btn-primary(type='button', role='search')
                                 i.glyphicon.glyphicon-search
         .container
             .row: .col-lg-8.col-lg-offset-2
