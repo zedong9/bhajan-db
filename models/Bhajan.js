@@ -15,6 +15,7 @@ module.exports = {
                     callback (error);
                     return;
                 } else {
+                    data.approved = true;
                     bhajans.findOne(data, function (error, result) {
                         client.close();
                         if (error) {
@@ -48,17 +49,18 @@ module.exports = {
     */
     search: function (data, callback) {
         if (_.isFunction(callback)) {
-            var findObject = {};
+            var find = {};
             var keys = Object.keys(data);
             keys.forEach(function (val, idx) {
-                findObject[val] = {$regex: data[val], $options: 'i'};
+                find[val] = {$regex: data[val], $options: 'i'};
             });
             db.connect('bhajans', function (error, client, bhajans) {
                 if (error) {
                     callback (error);
                     return;
                 } else {
-                    bhajans.find(findObject).sort({title: 1}).toArray(function (error, result) {
+                    find.approved = true;
+                    bhajans.find(find).sort({title: 1}).toArray(function (error, result) {
                         client.close();
                         if (error) {
                             callback(error);

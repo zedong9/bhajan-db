@@ -23,8 +23,9 @@ before(function (done) {
                     done(error);
                 } else {
                     bhajans.insert([
-                        {bhajan_id: unique_id_1, title: unique_title, test: true},
-                        {bhajan_id: unique_id_2, title: unique_title, test: true},
+                        {bhajan_id: unique_id_1, title: unique_title, test: true, approved: true},
+                        {bhajan_id: unique_id_2, title: unique_title, test: true, approved: true},
+                        {bhajan_id: unique_id_2, title: unique_title, test: true, approved: false},
                         {bhajan_id: 'not searchable', title: 'not searchable', test: true}
                     ], function (error) {
                         if (error) throw error;
@@ -92,7 +93,7 @@ describe('Bhajan search', function () {
         });
     });
 
-    it('should be case insensitive', function (next) {
+    it('should be case insensitive.', function (next) {
         Bhajan.search({title: unique_title.toUpperCase()}, function (error, result) {
             if (error) {
                 next(error);
