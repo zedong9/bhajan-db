@@ -14,7 +14,6 @@
     "node": ">=0.8"
   },
   "dependencies": {
-    "async": "0.2.9",
     "express": "~3.3.4",
     "jade": "~0.35.0",
     "less-middleware": "~0.1.14",
@@ -26,6 +25,7 @@
     "underscore.string": "2.3.3"
   },
   "devDependencies": {
+    "async": "0.2.9",
     "mocha": "~1.6.0",
     "chai": "~1.8.0",
     "superagent": "~0.15.4",
@@ -33,6 +33,7 @@
     "grunt-contrib-jshint": "~0.7.2",
     "grunt-release": "~0.6.0",
     "grunt-git": "~0.2.2",
-    "grunt-mocha-cli": "~1.4.0"
+    "grunt-mocha-cli": "~1.4.0",
+    "grunt-curl": "~1.2.1"
   }
 }

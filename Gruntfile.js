@@ -14,25 +14,18 @@ module.exports = function (grunt) {
             }
         },
         gitcheckout: {
-            production: {
-                options: {branch: 'production', create: false}
-            },
-            master: {
-                options: {branch: 'master', create: false}
+            default: {
+                options: {create: false, branch: '<%= branch %>'}
             }
         },
         gitpush: {
-            options: {tags: true},
-            master: {
-                options: {branch: 'master'}
-            },
-            production: {
-                options: {branch: 'production'}
+            default: {
+                options: {tags: true, branch: '<%= branch %>'},
             }
         },
         gitmerge: {
-            master: {
-                options: {branch: 'master', ffOnly: true}
+            default: {
+                options: {ffOnly: true, branch: '<%= branch %>'}
             }
         },
         mochacli: {
@@ -40,6 +33,9 @@ module.exports = function (grunt) {
             options: {
                 reporter: 'spec'
             }
+        },
+        curl: {
+            'public/db-backup.json': 'http://localhost:3000/api/bhajan'
         }
     });
 
@@ -48,18 +44,52 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-release');
     grunt.loadNpmTasks('grunt-git');
     grunt.loadNpmTasks('grunt-mocha-cli');
+    grunt.loadNpmTasks('grunt-curl');
 
     // Register our basic tasks.
     grunt.registerTask('default', 'build');
     grunt.registerTask('test', 'mochacli');
 
-    grunt.registerTask('build', ['jshint:default', 'test']);
-    grunt.registerTask('build:master', ['gitcheckout:master', 'build']);
+    grunt.registerTask('build', 'Lints and tests specified branch. If no branch is specified, current branch is used.', function (branch) {
+        if (branch) {
+            grunt.task.run(['checkout:' + branch, 'jshint:default', 'test']);
+        } else {
+            grunt.task.run(['jshint:default', 'test']);
+        }
+    });
+
+    grunt.registerTask('checkout', 'Checks out specified git branch.', function (branch) {
+        if (branch) {
+            grunt.config.set('branch', branch);
+            grunt.task.run('gitcheckout');
+        } else {
+            grunt.warn('Branch must be specified (checkout:branch).');
+        }
+    });
+
+    grunt.registerTask('merge', 'Merges first git branch into second.', function (source, dest) {
+        if (source && dest) {
+            grunt.config.set('branch', branch);
+            grunt.task.run('checkout:' + dest, 'gitmerge');
+        } else {
+            grunt.warn('Both branches must be specified (merge:source:dest).');
+        }
+    });
+
+    grunt.registerTask('push', 'Pushes specified git branch.', function (branch) {
+        if (branch) {
+            grunt.config.set('branch', branch);
+            grunt.task.run('gitpush');
+        } else {
+            grunt.warn('Branch must be specified (push:branch).');
+        }
+    });
+
+    grunt.registerTask('backup', 'Takes a snapshot of the data in the database and downloads it as JSON', 'curl');
 
     // Build deployment tasks.
-    grunt.registerTask('deploy', ['gitcheckout:production', 'gitmerge:master', 'gitpush:master', 'gitpush:production', 'gitcheckout:master']);
+    grunt.registerTask('deploy', ['merge:master:production', 'push:master', 'push:production', 'checkout:master']);
 
     grunt.registerTask('production', ['build:master', 'release', 'deploy']);
     grunt.registerTask('production:minor', ['build:master', 'release:minor', 'deploy']);
-
 };
