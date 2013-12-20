@@ -14,6 +14,11 @@ cd bhajan-db
 npm install
 ```
 
+If you have [Grunt](http://gruntjs.com/getting-started) installed, run:
+```sh
+grunt init
+```
+
 Decrypt database credentials:
 ```sh
 make decrypt_creds
