@@ -28,11 +28,21 @@ module.exports = function (grunt) {
                 options: {ffOnly: true, branch: '<%= branch %>'}
             }
         },
+        clean: {
+            hooks: ['.git/hooks']
+        },
+        githooks: {
+            all: {'pre-commit': 'jshint'}
+        },
         mochacli: {
             all: ['test/*.js'],
             options: {
                 reporter: 'spec'
             }
+        },
+        watch: {
+            files: ['**/*.js', '!node_modules/**/*'],
+            tasks: ['jshint'],
         },
         curl: {
             'public/db-backup.json': 'http://localhost:3000/api/bhajan'
@@ -40,11 +50,15 @@ module.exports = function (grunt) {
     });
 
     // Load our tasks.
+    grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-jshint');
-    grunt.loadNpmTasks('grunt-release');
-    grunt.loadNpmTasks('grunt-git');
-    grunt.loadNpmTasks('grunt-mocha-cli');
+    grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-curl');
+    grunt.loadNpmTasks('grunt-git');
+    grunt.loadNpmTasks('grunt-githooks');
+    grunt.loadNpmTasks('grunt-mocha-cli');
+    grunt.loadNpmTasks('grunt-npm-install');
+    grunt.loadNpmTasks('grunt-release');
 
     // Register our basic tasks.
     grunt.registerTask('default', 'build');
@@ -85,7 +99,9 @@ module.exports = function (grunt) {
         }
     });
 
-    grunt.registerTask('backup', 'Takes a snapshot of the data in the database and downloads it as JSON', 'curl');
+    grunt.registerTask('init', 'Build and configure the project for the first time.', ['npm-install', 'clean:hooks', 'githooks']);
+
+    grunt.registerTask('backup', 'Takes a snapshot of the data in the database and downloads it as JSON.', 'curl');
 
     // Build deployment tasks.
     grunt.registerTask('deploy', ['merge:master:production', 'push:master', 'push:production', 'checkout:master']);
