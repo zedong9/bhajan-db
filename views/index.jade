@@ -3,8 +3,12 @@ extends default
 block content
     script.
         $(document).ready(function() {
-            $('#search').on('click', function () {
-                search_redirect($('#query').val());
+            $('#search_title').on('click', function () {
+                search_redirect($.param({title: $('#query').val()}));
+            });
+
+            $('#search_lyrics').on('click', function () {
+                search_redirect($.param({lyrics: $('#query').val()}));
             });
 
             $('#query').keydown(function (event) {
@@ -17,6 +21,10 @@ block content
                 label.sr-only(for='query')
                 .input-group
                     input#query.form-control(type='text', placeholder='Search bhajan lyrics...')
-                    span.input-group-btn
-                        button#search.btn.btn-primary(type='button', role='search') Search
+                    span.input-group-btn.btn-group
+                        button#search.btn.btn-primary.dropdown-toggle(type='button', role='search' data-toggle='dropdown') Search <span class="caret"></span>
+                        ul.dropdown-menu(role='menu')
+                            li#search_title: a(href='#') Search Title
+                            li.divider
+                            li#search_lyrics: a(href='#') Search Lyrics
 

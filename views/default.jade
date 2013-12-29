@@ -8,8 +8,8 @@ html
         link(rel='stylesheet', href='//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.2/css/bootstrap.min.css')
         script.
             function search_redirect(query) {
-                if (query !== '') {
-                    window.location = '/search/' + query;
+                if (query.charAt(-1) !== '=') {
+                    window.location = '/search?' + query;
                 }
             }
 

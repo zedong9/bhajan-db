@@ -14,12 +14,13 @@ module.exports = {
     },
 
     search: function (req, res) {
-        Bhajan.search({lyrics: req.params.search}, function (error, result) {
+        Bhajan.search(req.query, function (error, result) {
             if (error) res.send(error);
             else {
+                var search = (req.query.title || req.query.lyrics || '');
                 res.locals.result = result;
-                res.locals.search = req.params.search;
-                res.locals.title = 'Search results for "' + req.params.search + '"';
+                res.locals.search = search;
+                res.locals.title = 'Search results for "' + search + '"';
                 res.render('search');
             }
         });
