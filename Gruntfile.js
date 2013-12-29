@@ -81,12 +81,12 @@ module.exports = function (grunt) {
         }
     });
 
-    grunt.registerTask('merge', 'Merges first git branch into second.', function (source, dest) {
-        if (source && dest) {
-            grunt.config.set('branch', branch);
-            grunt.task.run('checkout:' + dest, 'gitmerge');
+    grunt.registerTask('merge', 'Merges first git branch into second.', function (source) {
+        if (source) {
+            grunt.config.set('branch', source);
+            grunt.task.run('gitmerge');
         } else {
-            grunt.warn('Both branches must be specified (merge:source:dest).');
+            grunt.warn('Source branch must be specified (merge:source).');
         }
     });
 
@@ -104,7 +104,7 @@ module.exports = function (grunt) {
     grunt.registerTask('backup', 'Takes a snapshot of the data in the database and downloads it as JSON.', 'curl');
 
     // Build deployment tasks.
-    grunt.registerTask('deploy', ['merge:master:production', 'push:master', 'push:production', 'checkout:master']);
+    grunt.registerTask('deploy', ['checkout:production', 'merge:master', 'push:production', 'checkout:master', 'push:master']);
 
     grunt.registerTask('production', ['build:master', 'release', 'deploy']);
     grunt.registerTask('production:minor', ['build:master', 'release:minor', 'deploy']);
