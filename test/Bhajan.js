@@ -9,6 +9,7 @@ var db = models.Database;
 
 var unique_id_1 = uuid.v4();
 var unique_id_2 = uuid.v4();
+var unique_id_3 = uuid.v4();
 var unique_title = uuid.v4();
 
 var test_id = 'test_' + uuid.v4();
@@ -23,7 +24,7 @@ before(function (done) {
             bhajans.insert([
                 {bhajan_id: unique_id_1, title: unique_title, test: test_id, approved: true},
                 {bhajan_id: unique_id_2, title: unique_title, test: test_id, approved: true},
-                {bhajan_id: unique_id_2, title: unique_title, test: test_id, approved: false},
+                {bhajan_id: unique_id_3, title: unique_title, test: test_id, approved: false},
                 {bhajan_id: 'not searchable', title: 'not searchable', test: test_id}
             ], function (error) {
                 if (error) throw error;
@@ -102,6 +103,17 @@ describe('Bhajan search', function () {
             else {
                 expect(result).to.be.an('array');
                 expect(result.length).to.equal(0);
+                next();
+            }
+        });
+    });
+
+    it('should allow searching for unapproved bhajans.', function (next) {
+        Bhajan.search({approved: false}, function (error, result) {
+            if (error) next(error);
+            else {
+                expect(result).to.be.an('array');
+                expect(result.length).to.equal(1);
                 next();
             }
         });

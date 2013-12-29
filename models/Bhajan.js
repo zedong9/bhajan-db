@@ -11,30 +11,18 @@ module.exports = {
     findOne: function (data, callback) {
         if (_.isFunction(callback)) {
             db.connect('bhajans', function (error, client, bhajans) {
-                if (error) {
-                    callback (error);
-                    return;
-                } else {
-                    data.approved = true;
-                    bhajans.findOne(data, function (error, result) {
-                        client.close();
-                        if (error) {
-                            callback(error);
-                            return;
-                        } else {
-                            if (null !== result) {
-                                callback(null, result);
-                                return;
-                            } else {
-                                error = new Error();
-                                error.status = 404;
-                                error.message = 'This bhajan does not exist anymore.';
-                                callback(error);
-                                return;
-                            }
-                        }
-                    });
-                }
+                if (error) return callback(error);
+                bhajans.findOne(data, function (error, result) {
+                    client.close();
+                    if (error) return callback(error);
+                    if (result) return callback(null, result);
+
+                    // Return 404 error if no result found.
+                    error = new Error();
+                    error.status = 404;
+                    error.message = 'This bhajan does not exist anymore.';
+                    return callback(error);
+                });
             });
         } else {
             throw {
@@ -49,27 +37,18 @@ module.exports = {
     */
     search: function (data, callback) {
         if (_.isFunction(callback)) {
-            var find = {};
-            var keys = Object.keys(data);
-            keys.forEach(function (val, idx) {
-                find[val] = {$regex: data[val], $options: 'i'};
+            var find = {approved: true};
+            Object.keys(data).forEach(function (val, idx) {
+                if (val !== 'approved') find[val] = {$regex: data[val], $options: 'i'};
+                else find[val] = data[val];
             });
             db.connect('bhajans', function (error, client, bhajans) {
-                if (error) {
-                    callback (error);
-                    return;
-                } else {
-                    find.approved = true;
-                    bhajans.find(find, {_id: 0}).sort({title: 1}).toArray(function (error, result) {
-                        client.close();
-                        if (error) {
-                            callback(error);
-                            return;
-                        } else {
-                            callback(null, result);
-                        }
-                    });
-                }
+                if (error) return callback(error);
+                bhajans.find(find, {_id: 0}).sort({title: 1}).toArray(function (error, result) {
+                    client.close();
+                    if (error) return callback(error);
+                    return callback(null, result);
+                });
             });
         } else {
             throw {
