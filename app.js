@@ -73,11 +73,11 @@ app.locals({
 app.get('/', routes.index);
 
 // Routes for search & individual bhajan views.
-app.get('/search/:search', routes.bhajan.search);
+app.get('/search', routes.bhajan.search);
 app.get('/bhajan/:bhajan_id', routes.bhajan.findOne);
 
 // API routes to send data as JSON.
-app.get('/api/search/:search', routes.api.search);
+app.get('/api/search', routes.api.search);
 app.get('/api/bhajan', routes.api.findAll);
 app.get('/api/bhajan/:bhajan_id', routes.api.findOne);
 
