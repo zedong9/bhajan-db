@@ -15,13 +15,13 @@ html
 
             $(document).ready(function() {
                 $('#navbar-search').on('click', function () {
-                    search_redirect($('#navbar-query').val());
+                    search_redirect($.param({lyrics: $('#navbar-query').val()}));
                 });
 
                 $('#navbar-query').keydown(function (event) {
                     if (event.keyCode === 13) {
                         event.preventDefault();
-                        search_redirect($('#navbar-query').val());
+                        search_redirect($.param({lyrics: $('#navbar-query').val()}));
                     }
                 });
             });

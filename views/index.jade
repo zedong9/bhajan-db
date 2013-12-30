@@ -12,7 +12,7 @@ block content
             });
 
             $('#query').keydown(function (event) {
-                if (event.keyCode === 13) {search_redirect($('#query').val());}
+                if (event.keyCode === 13) search_redirect($.param({title: $('#query').val()}));
             });
         });
     .col-lg-6.col-lg-offset-3
