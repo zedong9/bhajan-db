@@ -22,7 +22,9 @@
     "node-uuid": "~1.4.1",
     "shortid": "2.0.0",
     "underscore": "~1.5.2",
-    "underscore.string": "2.3.3"
+    "underscore.string": "2.3.3",
+    "stylus": "~0.41.3",
+    "nib": "~1.0.1"
   },
   "devDependencies": {
     "async": "0.2.9",

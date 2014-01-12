@@ -3,6 +3,7 @@ var express = require('express');
 var http = require('http');
 var moment = require('moment');
 var path = require('path');
+var stylus = require('stylus');
 
 // Load route functions.
 var routes = require('./routes');
@@ -26,10 +27,19 @@ app.set('view engine', 'jade'); // use jade to render views.
 app.use(express.favicon());
 app.use(express.bodyParser());
 app.use(express.methodOverride());
-app.use(express.logger('dev'));
-app.use(app.router); // use specified route functions.
-app.use(require('less-middleware')({ src: __dirname + '/public' })); // use LESS to render CSS.
+app.use(stylus.middleware({
+    src: __dirname + '/resources/stylesheets/',
+    dest: __dirname + '/public/stylesheets/',
+    compile: function (str, path) {
+        return stylus(str)
+            .set('filename', path)
+            .set('compress', true)
+            .use(require('nib')())
+            .import('nib');
+    }
+}));
 app.use(express.static(path.join(__dirname, 'public'))); // Look in public directory if no other routes match.
+app.use(express.logger('dev'));
 
 app.configure('development', function () {
     // Error route to test error handling.
