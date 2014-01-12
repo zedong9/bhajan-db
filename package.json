@@ -24,7 +24,11 @@
     "underscore": "~1.5.2",
     "underscore.string": "2.3.3",
     "stylus": "~0.41.3",
-    "nib": "~1.0.1"
+    "nib": "~1.0.1",
+    "passport": "~0.1.18",
+    "passport-local": "~0.1.6",
+    "connect-flash": "~0.1.1",
+    "password-hash": "~1.2.1"
   },
   "devDependencies": {
     "async": "0.2.9",
