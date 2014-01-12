@@ -1,7 +1,10 @@
 // Load node modules.
 var express = require('express');
+var flash = require('connect-flash');
 var http = require('http');
 var moment = require('moment');
+var passport = require('passport');
+var LocalStrategy = require('passport-local').Strategy;
 var path = require('path');
 var stylus = require('stylus');
 
@@ -12,6 +15,7 @@ var routes = require('./routes');
 var models = require('./models');
 var Bhajan = models.Bhajan;
 var Quote = models.Quote;
+var User = models.User;
 
 // Load app info.
 var info = require('./package.json');
@@ -25,8 +29,14 @@ app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname + '/views'); // set views directory.
 app.set('view engine', 'jade'); // use jade to render views.
 app.use(express.favicon());
-app.use(express.bodyParser());
+app.use(express.cookieParser());
+app.use(express.json());
+app.use(express.urlencoded());
 app.use(express.methodOverride());
+app.use(express.session({secret: 'SECRET'}));
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(flash());
 app.use(stylus.middleware({
     src: __dirname + '/resources/stylesheets/',
     dest: __dirname + '/public/stylesheets/',
@@ -40,6 +50,15 @@ app.use(stylus.middleware({
 }));
 app.use(express.static(path.join(__dirname, 'public'))); // Look in public directory if no other routes match.
 app.use(express.logger('dev'));
+
+passport.use(new LocalStrategy(User.validate));
+passport.serializeUser(User.serialize);
+passport.deserializeUser(User.deserialize);
+
+app.use(function (req, res, next) {
+    if (req.isAuthenticated()) res.locals.user = req.user;
+    next();
+});
 
 app.configure('development', function () {
     // Error route to test error handling.
@@ -91,6 +110,10 @@ app.get('/api/search/:search', routes.api.search);
 app.get('/api/bhajan', routes.api.findAll);
 app.get('/api/bhajan/:bhajan_id', routes.api.findOne);
 
+app.get('/login', routes.user.login);
+app.post('/login', routes.user.authenticate);
+app.get('/logout', routes.user.logout);
+
 // Handle all other routes with 404.
 app.get('*', function (req, res, next) {
     res.status(404).render('404');
@@ -102,6 +125,4 @@ if (!module.parent) {
         console.log('Express server listening on port ' + app.get('port') + ' in ' + app.get('env') + ' mode.');
     });
 // Otherwise (for use in test suites), export app variable.
-} else {
-    module.exports = app;
-}
+} else module.exports = app;

@@ -35,6 +35,9 @@ html
                         span.icon-bar
                         span.icon-bar
                     a.navbar-brand(href='/').text-center #{project}
+                    if user
+                        p.navbar-text.navbar-left: a.navbar-link(href='/logout') Logout
+
                 .col-lg-4
                     #navbar-collapse.collapse.navbar-collapse
                         form.navbar-form(role='search')
@@ -42,7 +45,7 @@ html
                                 label.sr-only(for='navbar-query')
                                 input#navbar-query.form-control.col-lg-12(type='text', placeholder='Search lyrics...')
                             button#navbar-search.btn.btn-primary(type='button', role='search')
-                                i.glyphicon.glyphicon-search
+                                span.glyphicon.glyphicon-search
         .container
             .row: .col-lg-8.col-lg-offset-2
                 block content

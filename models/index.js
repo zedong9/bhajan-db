@@ -1,5 +1,6 @@
 module.exports = {
     Bhajan: require('./Bhajan'),
     Database: require('./Database'),
-    Quote: require('./Quote')
+    Quote: require('./Quote'),
+    User: require('./User')
 };
