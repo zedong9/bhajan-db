@@ -76,7 +76,7 @@ describe('Bhajan search', function () {
     });
 
     it('should return an array of objects.', function (next) {
-        Bhajan.search({title: unique_title}, function (error, result) {
+        Bhajan.search({title: unique_title, test: test_id}, function (error, result) {
             if (error) next(error);
             else {
                 expect(result).to.be.an('array');
@@ -87,7 +87,7 @@ describe('Bhajan search', function () {
     });
 
     it('should be case insensitive.', function (next) {
-        Bhajan.search({title: unique_title.toUpperCase()}, function (error, result) {
+        Bhajan.search({title: unique_title.toUpperCase(), test: test_id}, function (error, result) {
             if (error) next(error);
             else {
                 expect(result).to.be.an('array');
@@ -109,7 +109,7 @@ describe('Bhajan search', function () {
     });
 
     it('should allow searching for unapproved bhajans.', function (next) {
-        Bhajan.search({approved: false}, function (error, result) {
+        Bhajan.search({approved: false, test: test_id}, function (error, result) {
             if (error) next(error);
             else {
                 expect(result).to.be.an('array');
