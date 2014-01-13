@@ -56,7 +56,7 @@ describe('Bhajan findOne', function () {
     it('should throw an error if there are no results.', function (next) {
         Bhajan.findOne({bhajan_id: 'This bhajan doesn\'t exist'}, function (error, result) {
             expect(error.name).to.equal('Error');
-            expect(error.message).to.equal('This bhajan does not exist anymore.');
+            expect(error.message).to.equal('This bhajan does not exist.');
             next();
         });
     });
