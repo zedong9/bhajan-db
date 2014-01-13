@@ -105,17 +105,74 @@ describe('Bhajan search', function () {
 });
 
 describe('Bhajan update', function () {
+    var updated_bhajan;
+
+    before(function (done) {
+        Bhajan.update({bhajan_id: unique_id_3, translation: 'updated translation'}, function (error, bhajan) {
+            if (error) return done(error);
+            updated_bhajan = bhajan;
+            done();
+        });
+    });
+
     it('is a function.', function () {
        expect(Bhajan.update).to.be.a('function');
     });
 
-    it('updates the bhajan with provided data without modifying anything else.', function (next) {
-        Bhajan.update({bhajan_id: unique_id_3, translation: 'updated translation'}, function (error, bhajan) {
-            if (error) return next(error);
-            expect(bhajan.bhajan_id).to.equal(unique_id_3);
-            expect(bhajan.translation).to.equal('updated translation');
-            expect(bhajan.title).to.equal(unique_title);
-            expect(moment().diff(moment(bhajan.updatedAt))).to.be.below(5000);
+    it('updates the bhajan with provided data.', function () {
+        expect(updated_bhajan.translation).to.equal('updated translation');
+    });
+
+    it('does not modify other data.', function () {
+        expect(updated_bhajan.bhajan_id).to.equal(unique_id_3);
+        expect(updated_bhajan.title).to.equal(unique_title);
+    });
+
+    it('updates the updatedAt field.', function () {
+        expect(moment().diff(moment(updated_bhajan.updatedAt))).to.be.below(5000);
+    });
+});
+
+describe('Bhajan create', function () {
+    var created_bhajan;
+
+    before(function (done) {
+        Bhajan.create({
+            title: 'Test bhajan',
+            lyrics: 'test lyrics',
+            test: test_id
+        }, function (error, bhajan) {
+            if (error) return done(error);
+            created_bhajan = bhajan;
+            done();
+        });
+    });
+
+    it('should be a function.', function () {
+        expect(Bhajan.create).to.be.a('function');
+    });
+
+    it('should insert provided data and return inserted row.', function () {
+        expect(created_bhajan.title).to.equal('Test bhajan');
+        expect(created_bhajan.lyrics).to.equal('test lyrics');
+    });
+
+    it('should add a bhajan_id field.', function () {
+        expect(created_bhajan.bhajan_id).to.exist;
+    });
+
+    it('should not approve the bhajan by default.', function () {
+        expect(created_bhajan.approved).to.equal(false);
+    });
+
+    it('should add a createdAt field.', function () {
+        expect(created_bhajan.createdAt).to.exist;
+        expect(moment().diff(moment(created_bhajan.createdAt))).to.be.below(5000);
+    });
+
+    it('should fail if lyrics are not provided.', function (next) {
+        Bhajan.create({title: uuid.v4()}, function (error, result) {
+            expect(error).to.exist;
             next();
         });
     });
