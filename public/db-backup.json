@@ -1401,14 +1401,6 @@
   },
   {
     "approved": true,
-    "bhajan_id": "xJrgk0U7vKX",
-    "language": "",
-    "lyrics": "He Gauri Natha Shiva Shankara\\nHara Bham Bham Hara Bham Bham He Digambara\\nHe Gauri Natha Shiva Shankara\\nDam Dama Dam Dam Dama Dam Damarudhara\\nBhola Bhandari Parameshwara\\nHara Bham Bham Hara Bham Bham He Digambara",
-    "title": "He Gauri Natha Shiva Shankara",
-    "translation": "Worship the auspicious and all-pervading Lord Shiva, the beloved of Parvathi. He is full of grace, dancing to the rhythms of the drum. (Sound of Creation)"
-  },
-  {
-    "approved": true,
     "bhajan_id": "xyLlkCIXwYX",
     "language": "",
     "lyrics": "He Govinda He Ananda Nanda Gopala\\nMohana Muralidhara Shyama Gopala\\nHe Govinda He Ananda Nanda Gopala\\nSundara Giridhari Hare Natavara Lala\\nMadhava Keshava Madhana Gopala",
@@ -1486,6 +1478,16 @@
     "lyrics": "Heramba Janani Shri Sai Janani\\nBhavani Jagadhambe Ma (2)\\nThribhuvana Palini He Karunamayi\\nUma Sharadamba (2)\\nRaksha Karo Sai Ma",
     "title": "Heramba Janani Shri Sai Janani",
     "translation": "Pray to and worship the Sustainer and Savior of Three Worlds, Mother of Ganesha, Bhavani, Uma and Sharada. O Mother Sai! We pray to Thee to protect us."
+  },
+  {
+    "approved": true,
+    "bhajan_id": "xJrgk0U7vKX",
+    "language": "",
+    "lyrics": "Hey Gauri Natha Shiva Shankara\\nHara Bham Bham Hara Bham Bham Hey Digambara\\nHey Gauri Natha Shiva Shankara\\nDam Dama Dam Dam Dama Dam Damarudhara\\nBhola Bhandari Parameshwara\\nHara Bham Bham Hara Bham Bham Hey Digambara",
+    "title": "Hey Gauri Natha Shiva Shankara",
+    "translation": "Worship the auspicious and all-pervading Lord Shiva, the beloved of Parvati. He is full of grace, dancing to the rhythms of the drum.",
+    "updatedAt": "2014-01-13T09:16:50.923Z",
+    "updatedBy": "sgunturi"
   },
   {
     "approved": true,
@@ -3381,9 +3383,11 @@
     "approved": true,
     "bhajan_id": "eJSICImPtX",
     "language": "",
-    "lyrics": "Shiva Shambo Shambo Shiva Shambo Mahadeva\\nHara Hara Hara Hara Mahadeva Shiva Shambo Mahadeva\\nHalahaladhara Shambo Anatha Natha Shambo\\nHari Om Hari Om Hari Om Namah Shivaya\\nHari Om Om Om Hari Om Om Om Hari Om Namah Shivaya",
-    "title": "Shiva Shambo Shambo",
-    "translation": "Let us bow to the Lord of Lords, Shiva, the destroyer of evil. He is the Lord of the destitute, who swallowed the poison to save His devotees."
+    "lyrics": "Shiva Shambho Shambho Shiva Shambho Mahadeva\\nHara Hara Hara Hara Mahadeva Shiva Shambho Mahadeva\\nHalahaladhara Shambho Anatha Natha Shambho\\nHari Om Hari Om Hari Om Namah Shivaya\\nHari Om Om Om Hari Om Om Om Hari Om Namah Shivaya",
+    "title": "Shiva Shambho Shambho",
+    "translation": "Let us bow to the Lord of Lords, Shiva, the destroyer of evil. He is the Lord of the destitute, who swallowed the poison to save His devotees.",
+    "updatedAt": "2014-01-13T09:18:00.203Z",
+    "updatedBy": "sgunturi"
   },
   {
     "approved": true,
