@@ -379,9 +379,11 @@
     "approved": true,
     "bhajan_id": "g1H3pIQvFQ",
     "language": "English",
-    "lyrics": "Bhagavan, Shri Satya Sai Baba Bhagavan, Kali Yuga Avatara Bhagavan...\\n...Divine Love Of My Heart, Come To Me\\nHey Ghana Shyam Hey Sai Ram Chant The Names Of The Lord\\nSai Hold Me In Love, Lift Me Above, Bring Me Home To Thee\\nBhagavan, Sai Ram, Come To Me My Lord\\nHey Sita Ram, Hey Radha Shyam, Chant The Names Of The Lord\\nSwami Fill Me With Peace, Grant Me Release, Make Me One With Thee\\nBhagavan, Sai Ram, Be With Me My Lord",
-    "title": "Bhagavan, Shri Satya Sai Baba",
-    "translation": "Self-explanatory"
+    "lyrics": "Bhagavan, Shri Satya Sai Baba Bhagavan, Kali Yuga Avatara Bhagavan, Divine Love Of My Heart, Come To Me\\nHey Ghana Shyam, Hey Sai Ram, Chant The Names Of The Lord\\nSai Hold Me In Love, Lift Me Above, Bring Me Home To Thee\\nBhagavan, Sai Ram, Come To Me My Lord\\nHey Sita Ram, Hey Radha Shyam, Chant The Names Of The Lord\\nSwami Fill Me With Peace, Grant Me Release, Make Me One With Thee\\nBhagavan, Sai Ram, Be With Me My Lord",
+    "title": "Bhagavan Sri Satya Sai Baba",
+    "translation": "",
+    "updatedAt": "2014-01-13T06:24:28.107Z",
+    "updatedBy": "sgunturi"
   },
   {
     "approved": true,
@@ -435,9 +437,11 @@
     "approved": true,
     "bhajan_id": "xkT3TL7vF7",
     "language": "",
-    "lyrics": "Bhajo Gana Nayaka Gajavadana\\nMangala Dayaka Shubha Charana\\nSiddhi Vinayaka Shiva Nandana\\nAnanda Dayaka Chitta Chandana\\nBuddhi Pradayaka Jagavandana\\nMangala Dayaka Shubha Charana",
-    "title": "Bhajo Ghana Nayaka Gajavadhana",
-    "translation": "Worship the elephant-faced Lord Ganesha, the leader of divine forces, and son of Lord Shiva. He bestows success, bliss, auspiciousness, and liberation. He is revered by one and all."
+    "lyrics": "Bhajo Gananayaka Gajavadana\\nMangala Dayaka Shubha Charana\\nSiddhi Vinayaka Shiva Nandana\\nAnanda Dayaka Chitta Chandana\\nBuddhi Pradayaka Jagavandana\\nMangala Dayaka Shubha Charana",
+    "title": "Bhajo Gananayaka Gajavadana",
+    "translation": "Worship the elephant-faced Lord Ganesha, the leader of divine forces, and son of Lord Shiva. He bestows success, bliss, auspiciousness, and liberation. He is revered by one and all.",
+    "updatedAt": "2014-01-13T06:34:12.869Z",
+    "updatedBy": "sgunturi"
   },
   {
     "approved": true,
@@ -907,17 +911,21 @@
     "approved": true,
     "bhajan_id": "xyxZapI7DFQ",
     "language": "",
-    "lyrics": "Gajavadana Gananatha Gajavadana Dinanatha\\nSiddhi Data Shiva Tanaya\\nBuddhi Pradayaka Gajanana\\nParvati Nandana Bhava Bhaya Bhanjana\\nYuga Yuga Vandita Jaya Shri Ganesha",
-    "title": "Gajavadhana Gananatha Gajavadhana Dinanatha",
-    "translation": "Worship the elephant-faced Lord Gajanana, the Lord of demi-gods. The son of Lord Shiva and Mother Parvati who bestows success and removes the fear of crossing the ocean of life and death, is worshipped during all yugas (ages)."
+    "lyrics": "Gajavadana Gananatha Gajavadana Dinanatha\\nSiddhi Data Shiva Tanaya\\nBuddhi Pradayaka Gajanana\\nParvati Nandana Bhava Bhaya Bhanjana\\nYuga Yuga Vandita Jaya Sri Ganesha",
+    "title": "Gajavadana Gananatha Gajavadana Deenanatha",
+    "translation": "Worship the elephant-faced Lord Gajanana, the Lord of demi-gods. The son of Lord Shiva and Mother Parvati who bestows success and removes the fear of crossing the ocean of life and death, is worshipped during all yugas (ages).",
+    "updatedAt": "2014-01-13T06:35:41.208Z",
+    "updatedBy": "sgunturi"
   },
   {
     "approved": true,
     "bhajan_id": "xkbZT6UQDYX",
     "language": "",
     "lyrics": "Gana Natha Gana Natha\\nMushika Vahana Jaya Gana Natha\\nCharanam Sharanam Gajanana\\nGana Natha Gana Natha\\nSiddhi Vinayaka Gana Natha\\nMukti Pradayaka Gana Natha\\nJagadoddhara Jaya Gana Natha\\nCharanam Sharanam Gajanana",
-    "title": "Gajavadhana Gananatha Natha",
-    "translation": "Take refuge at the feet of Lord Ganesha whose conveyance is the mouse and who protects the universe and bestows liberation. The leader of the Ganas is perfection itself and removes obstacles."
+    "title": "Gajavadana Gananatha Natha",
+    "translation": "Take refuge at the feet of Lord Ganesha whose conveyance is the mouse and who protects the universe and bestows liberation. The leader of the Ganas is perfection itself and removes obstacles.",
+    "updatedAt": "2014-01-13T06:36:54.874Z",
+    "updatedBy": "sgunturi"
   },
   {
     "approved": true,
@@ -1693,7 +1701,9 @@
     "language": "",
     "lyrics": "Jai Sairam Jai Sairam\\nPremavatara Sai Avatara\\nJai Sairam Jai Sairam\\nRamavatara Sai Raghu Rama\\nKrishnavatara Sai Ghanashyama\\nYuga Avatara Sai Bhagavan\\nSarvavatara Satya Sai Rama",
     "title": "Jai Sairam Jai Sairam",
-    "translation": "Victory to Lord Sai Ram whose form is Love Incarnate. Lord Sathya Sai, the incarnations is all incarnations, is also Rama, Krishna and Shiva."
+    "translation": "Victory to Lord Sai Ram, whose form is Love Incarnate. Lord Sathya Sai, the incarnation of all incarnations, is also Rama, Krishna and Shiva.",
+    "updatedAt": "2014-01-13T06:23:18.932Z",
+    "updatedBy": "sgunturi"
   },
   {
     "approved": true,
