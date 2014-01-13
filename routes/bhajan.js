@@ -5,6 +5,7 @@ module.exports = {
     findOne: function (req, res) {
         var bhajan = req.body.bhajan;
         bhajan.lyrics = bhajan.lyrics.replace(/\\n/g, '<br>');
+        res.locals.flash = req.flash();
         res.render('bhajan', bhajan);
     },
 
@@ -30,7 +31,16 @@ module.exports = {
     update: function (req, res, next) {
         Bhajan.update(req.body, function (error, result) {
             if (error) return next(error);
+            req.flash('success', 'The bhajan has been updated.');
             res.redirect('/bhajan/' + result.bhajan_id);
+        });
+    },
+
+    create: function (req, res, next) {
+        Bhajan.create(req.body, function (error, result) {
+            if (error) return next(error);
+            req.flash('success', 'Your bhajan has been submitted for approval.');
+            res.redirect('/');
         });
     }
 };

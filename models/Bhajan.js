@@ -6,9 +6,14 @@ var _ = require('underscore');
 var db = require('./Database');
 
 module.exports = {
+    /*
+    * Create: accepts bhajan data, callback. Validates, sanitizes, and inserts
+    * object to database and calls back inserted object.
+    */
     create: function (data, done) {
         if (!_.isFunction(done)) throw new Error('Callback not provided.');
         if (!data.lyrics) return done(new Error('Lyrics not provided.'));
+        data.lyrics = data.lyrics.replace(/\r\n/g, '\\n');
         data.bhajan_id = shortid();
         data.createdAt = moment().toDate();
         data.approved = false;
@@ -20,6 +25,10 @@ module.exports = {
             });
         });
     },
+    /*
+    * Update: accepts bhajan data, callback. Validates, sanitizes, and updates
+    * object in database and calls back updated object.
+    */
     update: function (data, done) {
         if (!_.isFunction(done)) throw new Error('Callback not provided.');
         data.updatedAt = moment().toDate();

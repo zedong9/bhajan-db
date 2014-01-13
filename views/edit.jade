@@ -4,16 +4,16 @@ block content
     .row: .col-lg-12
         form(action='/edit', method='post')
             input(type='hidden', name='_method', value='put')
-            input(type='hidden', name='updatedBy', value='#{user.username}')
+            input(type='hidden', name='updatedBy', value='#{username}')
             input(type='hidden', name='bhajan_id' value='#{bhajan.bhajan_id}')
             .form-group
                 label Title
-                input.col-lg-12(type='text', name='title', value='#{bhajan.title}')
+                input.col-lg-12.form-control(type='text', name='title', value='#{bhajan.title}')
             .form-group
                 label Lyrics
-                textarea.col-lg-12(type='text', rows='10', name='lyrics') !{bhajan.lyrics}
+                textarea.col-lg-12.form-control(type='text', rows='10', name='lyrics') !{bhajan.lyrics}
             unless bhajan.language === 'english'
                 .form-group
                     label Translation
-                    textarea.col-lg-12(type='text', rows='5', name='translation') !{bhajan.translation}
+                    textarea.col-lg-12.form-control(type='text', rows='5', name='translation') !{bhajan.translation}
             input.btn.btn-primary.pull-right(type='submit', value='Save')
