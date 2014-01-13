@@ -1,10 +1,25 @@
 var moment = require('moment');
 var mongodb = require('mongodb');
+var shortid = require('shortid');
 var _ = require('underscore');
 
 var db = require('./Database');
 
 module.exports = {
+    create: function (data, done) {
+        if (!_.isFunction(done)) throw new Error('Callback not provided.');
+        if (!data.lyrics) return done(new Error('Lyrics not provided.'));
+        data.bhajan_id = shortid();
+        data.createdAt = moment().toDate();
+        data.approved = false;
+        db.connect('bhajans', function (error, client, bhajans) {
+            bhajans.insert(data, function (error, result) {
+                client.close();
+                if (error) return done(error);
+                done(null, _.first(result));
+            });
+        });
+    },
     update: function (data, done) {
         if (!_.isFunction(done)) throw new Error('Callback not provided.');
         data.updatedAt = moment().toDate();
