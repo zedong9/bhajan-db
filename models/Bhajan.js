@@ -8,6 +8,7 @@ module.exports = {
     update: function (data, done) {
         if (!_.isFunction(done)) throw new Error('Callback not provided.');
         data.updatedAt = moment().toDate();
+        if (data.lyrics) data.lyrics = data.lyrics.replace(/\r\n/g, '\\n');
         db.connect('bhajans', function (error, client, bhajans) {
             if (error) return done(error);
 
@@ -55,7 +56,7 @@ module.exports = {
         if (!_.isFunction(done)) throw new Error('Callback not provided.');
         var find = {approved: true};
         Object.keys(data).forEach(function (val, idx) {
-            if (val !== 'approved') find[val] = {$regex: data[val], $options: 'i'};
+            if (val !== 'approved' && val !== 'test') find[val] = {$regex: data[val], $options: 'i'};
             else find[val] = data[val];
         });
         db.connect('bhajans', function (error, client, bhajans) {

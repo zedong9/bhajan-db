@@ -14,7 +14,7 @@ module.exports = {
     },
 
     findAll: function (req, res, next) {
-        Bhajan.search({test: 'test_'}, function (error, result) {
+        Bhajan.search({test: {$exists: 0}}, function (error, result) {
             if (error) next(error);
             else res.json(result);
         });

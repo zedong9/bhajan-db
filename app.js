@@ -30,8 +30,7 @@ app.set('views', __dirname + '/views'); // set views directory.
 app.set('view engine', 'jade'); // use jade to render views.
 app.use(express.favicon());
 app.use(express.cookieParser());
-app.use(express.json());
-app.use(express.urlencoded());
+app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(express.session({secret: 'SECRET'}));
 app.use(passport.initialize());
@@ -101,15 +100,18 @@ app.locals({
 // Route for homepage.
 app.get('/', routes.index);
 
-// Routes for search & individual bhajan views.
+// Routes for bhajans.
 app.get('/search', routes.bhajan.search);
 app.get('/bhajan/:bhajan_id', routes.bhajan.findOne);
+app.get('/edit/:bhajan_id', routes.bhajan.edit);
+app.put('/edit', routes.bhajan.update);
 
 // API routes to send data as JSON.
 app.get('/api/search/:search', routes.api.search);
 app.get('/api/bhajan', routes.api.findAll);
 app.get('/api/bhajan/:bhajan_id', routes.api.findOne);
 
+// Routes to manage authentication states.
 app.get('/login', routes.user.login);
 app.post('/login', routes.user.authenticate);
 app.get('/logout', routes.user.logout);
