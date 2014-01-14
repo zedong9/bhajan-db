@@ -1,9 +1,10 @@
 extends default
 
 block content
+    +alerts(flash)
     .row
         .col-lg-10: h3 #{title}
-        if user
+        if username
             .col-lg-2: a.text-right(href='/edit/#{bhajan_id}') Edit
     .row: .col-lg-12 !{lyrics}
     br

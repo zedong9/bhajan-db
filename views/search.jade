@@ -14,4 +14,7 @@ block content
                         td: a(href='/bhajan/#{bhajan.bhajan_id}') #{bhajan.title}
                         td.hidden-xs= bhajan.language
     else
-        p We're working on adding more bhajans! Check back again soon.
+        p
+        | Didn't find the bhajan you're looking for? Help grow the database by
+        a(href='/create')  submitting a bhajan
+        |!

@@ -55,7 +55,7 @@ passport.serializeUser(User.serialize);
 passport.deserializeUser(User.deserialize);
 
 app.use(function (req, res, next) {
-    if (req.isAuthenticated()) res.locals.user = req.user;
+    if (req.isAuthenticated()) res.locals.username = req.user.username;
     next();
 });
 
@@ -63,6 +63,11 @@ app.configure('development', function () {
     // Error route to test error handling.
     app.get('/error', function (req, res, next) {
         return next(new Error('A test error has been thrown.'));
+    });
+
+    app.get('/flash', function (req, res) {
+        req.flash('success', 'This is a flash message.');
+        res.redirect('/');
     });
     // Use Express's error handler.
     app.use(express.errorHandler());
@@ -100,11 +105,16 @@ app.locals({
 // Route for homepage.
 app.get('/', routes.index);
 
-// Routes for bhajans.
+// Routes for bhajan CRUD operations.
 app.get('/search', routes.bhajan.search);
 app.get('/bhajan/:bhajan_id', routes.bhajan.findOne);
 app.get('/edit/:bhajan_id', routes.bhajan.edit);
 app.put('/edit', routes.bhajan.update);
+app.get('/create', function (req, res) {
+    res.locals.title = 'Add Bhajan';
+    res.render('create');
+});
+app.post('/bhajan', routes.bhajan.create);
 
 // API routes to send data as JSON.
 app.get('/api/search/:search', routes.api.search);
