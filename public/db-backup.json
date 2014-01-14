@@ -149,7 +149,7 @@
     "approved": true,
     "bhajan_id": "gJMeo6ImvY7",
     "language": "",
-    "lyrics": "Ambika Thanaya Gajanana\\nGaja Vadana Gana Natha Gajanana\\nPahi Ganesha Vinayaka (2)\\nThribhuvana Palaka Mangala Dhayaka\\nVidhya Buddhi Siddhi Pradhayaka\\nPahi Ganesha Vinayaka (3)",
+    "lyrics": "Ambika Thanaya Gajanana\\nGaja Vadana Gana Natha Gajanana\\nPahi Ganesha Vinayaka (2)\\nThribhuvana Palaka Mangala Dayaka\\nVidhya Buddhi Siddhi Pradayaka\\nPahi Ganesha Vinayaka (3)",
     "title": "Ambika Thanaya Gajanana",
     "translation": "Elephant-faced Lord Ganesha, son of Amba, is the Lord of all divine forces. Surrender to the Lord of all three worlds, the bestower of auspiciousness who grants knowledge, wisdom and intellect."
   },
@@ -301,15 +301,17 @@
     "approved": true,
     "bhajan_id": "l14WspLXPKX",
     "language": "",
-    "lyrics": "Ayodhyavasi Ram Ram Ram Dasharatha Nandhana Ram\\nPathitha Pavana Janaki Jeevana Sita Mohana Ram\\nAyodhyavasi Ram Ram Ram Dasharatha Nandhana Ram\\nPathitha Pavana Janaki Jeevana Sita Mohana Ram",
-    "title": "Ayodhyavasi Ram Ram Ram Dasharatha Nandhana Ram",
-    "translation": "Lord Rama, the resident of Ayodhya and the beloved son of King Dasharatha, is the savior of the fallen and the Lord of Janaki (Sita)."
+    "lyrics": "Ayodhyavasi Ram Ram Ram Dasharatha Nandana Ram\\nPathitha Pavana Janaki Jeevana Sita Mohana Ram\\nAyodhyavasi Ram Ram Ram Dasharatha Nandana Ram\\nPathitha Pavana Janaki Jeevana Sita Mohana Ram",
+    "title": "Ayodhyavasi Ram Ram Ram Dasharatha Nandana Ram",
+    "translation": "Lord Rama, the resident of Ayodhya and the beloved son of King Dasharatha, is the savior of the fallen and the Lord of Janaki (Sita).",
+    "updatedAt": "2014-01-14T07:31:01.602Z",
+    "updatedBy": "sgunturi"
   },
   {
     "approved": true,
     "bhajan_id": "x1HbjpImwtm",
     "language": "",
-    "lyrics": "Ayyappa Sharaname Ayyappa Sharaname Ayyappa Sharaname\\n... Swami Ayyappa Sharaname (2)\\nSabari Nayaka Shanthi Dhayaka Ayyappa Sharaname\\n... Swami Ayyappa Sharaname\\nParthi Nayaka Prashanti Dhayaka Ayyappa Sharaname\\n... Swami Ayyappa Sharaname",
+    "lyrics": "Ayyappa Sharaname Ayyappa Sharaname Ayyappa Sharaname\\n... Swami Ayyappa Sharaname (2)\\nSabari Nayaka Shanthi Dayaka Ayyappa Sharaname\\n... Swami Ayyappa Sharaname\\nParthi Nayaka Prashanti Dayaka Ayyappa Sharaname\\n... Swami Ayyappa Sharaname",
     "title": "Ayyappa Sharaname Ayyappa Sharaname",
     "translation": "Take refuge in Ayyappa, the Lord of Sabari mountain and of Puttaparthi, who bestows supreme peace."
   },
@@ -349,7 +351,7 @@
     "approved": true,
     "bhajan_id": "xyM36LXvY7",
     "language": "",
-    "lyrics": "Bala Gopala Sai Bala Gopala\\nDevaki Nandana Gopala\\nBala Gopala Sai Bala Gopala\\nVasudeva Nandhana Gopala\\nYashodha Bala Gopala\\nNandha Gopala Anandha Gopala\\nSai Gopala Sathya Sai Gopala",
+    "lyrics": "Bala Gopala Sai Bala Gopala\\ndevaki Nandana Gopala\\nbala Gopala Sai Bala Gopala\\nvasudeva Nandana Gopala\\nyashodha Bala Gopala\\nnandha Gopala Anandha Gopala\\nsai Gopala Sathya Sai Gopala",
     "title": "Bala Gopala Sai Bala Gopala",
     "translation": "Chant the name of Lord Sai. He is none other than the child Gopala, son of Devaki and Vasudeva, and the ever blissful (foster) son of Yashoda and Nanda"
   },
@@ -474,8 +476,10 @@
     "bhajan_id": "gk-e3a8XDtQ",
     "language": "",
     "lyrics": "Bhajo Radhe Govinda Bhajo Shyama Gopal\\nShyama Gopal Bhajo Murali Gopal\\nBhajo Radhe Govinda Bhajo Shyama Gopal\\nKeshava Narahari Shyama Gopal\\nMadhava Murahara Murali Gopal",
-    "title": "Bhajo Radhe Govindha Bhajo Shyama Gopal",
-    "translation": "Repeat the names of Krishna: beloved of Radha, dark-haired flute player, beautiful Keshava, God in human form, and slayer of the demon Mura."
+    "title": "Bhajo Radhe Govinda Bhajo Shyama Gopal",
+    "translation": "Repeat the names of Krishna: beloved of Radha, dark-haired flute player, beautiful Keshava, God in human form, and slayer of the demon Mura.",
+    "updatedAt": "2014-01-14T07:29:23.337Z",
+    "updatedBy": "sgunturi"
   },
   {
     "approved": true,
@@ -637,7 +641,7 @@
     "approved": true,
     "bhajan_id": "x1Bb26LmDK7",
     "language": "",
-    "lyrics": "Chanda Kirana Kula Mandana Ram\\nShrimad Dasharatha Nandhana Ram\\nKaushalya Sukha Vardhana Ram\\nVishwamithra Priya Dhana Ram",
+    "lyrics": "Chanda Kirana Kula Mandana Ram\\nshrimad Dasharatha Nandana Ram\\nkaushalya Sukha Vardhana Ram\\nvishwamithra Priya Dhana Ram",
     "title": "Chanda Kirana Kula Mandana Ram",
     "translation": "Lord Rama, the adornment of the Solar dynasty, and the beloved son of King Dasharatha, filled Mother Kaushalya's heart with bliss. He was the beloved treasure of Sage Vishwamithra."
   },
@@ -901,7 +905,7 @@
     "approved": true,
     "bhajan_id": "x1ReppImDtX",
     "language": "",
-    "lyrics": "Gajanana He Ganapathi Deva\\nSiddhi Vinayaka Mangala Dhatha\\nGajanana He Ganapathi Deva\\nGajamukha Rupa Sai Ganesha\\nMoksha Pradhayaka Hey Gananatha\\nPapa Vidhoora Bhava Bhaya Hara\\nVighna Vinashaka Vinayaka\\nVijaya Gajanana Vinayaka",
+    "lyrics": "Gajanana He Ganapathi Deva\\nSiddhi Vinayaka Mangala Dhatha\\nGajanana He Ganapathi Deva\\nGajamukha Rupa Sai Ganesha\\nMoksha Pradayaka Hey Gananatha\\nPapa Vidhoora Bhava Bhaya Hara\\nVighna Vinashaka Vinayaka\\nVijaya Gajanana Vinayaka",
     "title": "Gajanana He Ganapathi Deva",
     "translation": "O elephant headed Lord Ganesha, you are the bestower of auspiciousness and realization. O Lord Sai, you are the Lord Ganesha who is the remover of sins and bestower of liberation. You are the remover of obstacles and the bestower of victory, O Lord Ganesha."
   },
@@ -937,7 +941,7 @@
     "approved": true,
     "bhajan_id": "lkfZppUmvYm",
     "language": "",
-    "lyrics": "Gajavadhana Gananatha Natha\\nGauri Vara Thanaya Gunalaya\\nGajavadhana Gananatha Natha\\nVidya Dhayaka Buddhi Pradhayaka\\nSiddhi Vinayaka He Shubha Dhayaka",
+    "lyrics": "Gajavadhana Gananatha Natha\\nGauri Vara Thanaya Gunalaya\\nGajavadhana Gananatha Natha\\nVidya Dayaka Buddhi Pradayaka\\nSiddhi Vinayaka He Shubha Dayaka",
     "title": "Gana Natha Gana Natha",
     "translation": "The elephant-faced Lord who is the master of all the Ganas is the beloved son of Lord of Gauri (Shiva). He is the embodiment of virtues and bestower of knowledge and intellect. Lord Vinayaka who is perfection himself bestows auspiciousness."
   },
@@ -1227,7 +1231,7 @@
     "approved": true,
     "bhajan_id": "eJ108XDFm",
     "language": "",
-    "lyrics": "Guru Deva Priya Deva Sai Deva Dhaya Maya\\nVibhuthi Sundara Shashanka Shekara\\nSai Shankara Dhaya Karo\\nGuru Deva Priya Deva Sai Deva Dhaya Maya\\nGokula Nandhana Sai Gopala\\nRaghukula Bhushana Sai Rama\\nHe Madananthaka Dhaya Karo (2)",
+    "lyrics": "Guru Deva Priya Deva Sai Deva Dhaya Maya\\nvibhuthi Sundara Shashanka Shekara\\nsai Shankara Dhaya Karo\\nguru Deva Priya Deva Sai Deva Dhaya Maya\\ngokula Nandana Sai Gopala\\nraghukula Bhushana Sai Rama\\nhe Madananthaka Dhaya Karo (2)",
     "title": "Guru Deva Priya Deva Sai Deva Dhaya Maya",
     "translation": "Sai is the merciful and enchanting Guru who is also Shiva, adorned with Vibhuthi. Sai si Gopala, Nanda's son, and Rama, the jewel of the Raghu dynasty."
   },
@@ -1549,16 +1553,16 @@
     "approved": true,
     "bhajan_id": "xJMeRUXvY7",
     "language": "Hindi",
-    "lyrics": "Ishwara Allah Tere Nam Ishwari Nandhana Sai Ram\\nKrishna Kristhu Tere Nam Karuna Sagara Sai Ram\\nRama Raghava Tere Nam Shirdi Purishwara Sai Ram\\nKrishna Keshava Tere Nam Karuna Sagara Sai Ram",
-    "title": "Ishwara Allah Tere Nam Ishwari Nandhana Sai Ram",
+    "lyrics": "Ishwara Allah Tere Nam Ishwari Nandana Sai Ram\\nkrishna Kristhu Tere Nam Karuna Sagara Sai Ram\\nrama Raghava Tere Nam Shirdi Purishwara Sai Ram\\nkrishna Keshava Tere Nam Karuna Sagara Sai Ram",
+    "title": "Ishwara Allah Tere Nam Ishwari Nandana Sai Ram",
     "translation": "Lord Sai, son of Eshwaramma, You are known by many names: Ishwar, Allah, Krishna, Jesus, Rama, Shirdi Sai, and the ocean of mercy."
   },
   {
     "approved": true,
     "bhajan_id": "eJQgC8mPY7",
     "language": "",
-    "lyrics": "Ishwari Nandhana Sai Gopala\\nHe Jaganmohana Krishna Krishna\\nIshwari Nandhana Sai Gopala\\nJagadoddhara Parthi Vihara\\nPrema Swroopa Premavathara\\nDwarakamayi Shri Sathya Sai\\nSai Jaganmohana Krishna Krishna",
-    "title": "Ishwari Nandhana Sai Gopala",
+    "lyrics": "Ishwari Nandana Sai Gopala\\nhe Jaganmohana Krishna Krishna\\nishwari Nandana Sai Gopala\\njagadoddhara Parthi Vihara\\nprema Swroopa Premavathara\\ndwarakamayi Shri Sathya Sai\\nsai Jaganmohana Krishna Krishna",
+    "title": "Ishwari Nandana Sai Gopala",
     "translation": "O Sai, son of Eshwaramma, You are Krishna, the Lord of the Universe, incarnation and embodiment of love, who resides in Puttaparthi and Dwarakamayi (Shirdi Sai Baba's abode)"
   },
   {
@@ -1653,7 +1657,7 @@
     "approved": true,
     "bhajan_id": "eJkxeALmvFX",
     "language": "Hindi",
-    "lyrics": "Jai Hari Bol Jai Sita Ram Gopi Gopala Bhajo Radhe Shyam\\nHare Ram Ram Ram Ghana Shyam Shyam Shyam\\nShri Raghu Nandhana Shri Rama Dasharathe Jaya Raghu Rama\\nNandha Kishora Navanitha Chora Brindhavana Govinda Lala\\nHare Ram Ram Ram Ghana Shyam Shyam Shyam",
+    "lyrics": "Jai Hari Bol Jai Sita Ram Gopi Gopala Bhajo Radhe Shyam\\nhare Ram Ram Ram Ghana Shyam Shyam Shyam\\nshri Raghu Nandana Shri Rama Dasharathe Jaya Raghu Rama\\nnandha Kishora Navanitha Chora Brindhavana Govinda Lala\\nhare Ram Ram Ram Ghana Shyam Shyam Shyam",
     "title": "Jai Hari Bol Jai Sita Ram Gopi Gopala Bhajo Radhe Shyam",
     "translation": "Chant the names of Rama, Lord of Sita, prince of King Dadharatha of Raghu dynasty; of Hari, Gopala, Radhey Shyam; and Lord Krishna of Brindhavan, son of Nandha, who stole butter from Gopis as a child."
   },
@@ -1661,7 +1665,7 @@
     "approved": true,
     "bhajan_id": "x1eeeALmvKm",
     "language": "",
-    "lyrics": "Jai Jai Jai Gana Nayaka Jai Jai Vigna Vinashaka\\nJai Shubha Managala Dhayaka Vidya Buddhi Pradhayaka\\nGajavadana Gowri Nandana (2)\\nGangadhara Shiva Shambo Nandana",
+    "lyrics": "Jai Jai Jai Gana Nayaka Jai Jai Vighna Vinashaka\\nJai Shubha Managala Dayaka Vidya Buddhi Pradayaka\\nGajavadana Gowri Nandana (2)\\nGangadhara Shiva Shambo Nandana",
     "title": "Jai Jai Jai Gana Nayaka",
     "translation": "Salutations to Ganesha who removes obstacles and bestows auspiciousness, intellect and knowledge; to the elephant-faced son of Gowri and Shiva"
   },
@@ -1693,9 +1697,11 @@
     "approved": true,
     "bhajan_id": "gJElgC8XPtm",
     "language": "",
-    "lyrics": "Jai Jai Ram Govinda Hari Hari (3)\\nJanaki Ram Govinda Hari Hari (3)\\nSai Ram Govinda Hari Hari (3)",
-    "title": "Jai Jai Ram Govindha Hari Hari",
-    "translation": "Glory be to Lord Rama, beloved of Mother Janaki, Lord Govinda Hari - the stealer of our hearts and Lord Sai who resides in Parthi."
+    "lyrics": "Jai Jai Ram Govinda Hari Hari (x3)\\nJanaki Ram Govinda Hari Hari (x3)\\nSai Ram Govinda Hari Hari (x3)",
+    "title": "Jai Jai Ram Govinda Hari Hari",
+    "translation": "Glory be to Lord Rama, beloved of Mother Janaki, Lord Govinda Hari - the stealer of our hearts and Lord Sai who resides in Parthi.",
+    "updatedAt": "2014-01-14T07:30:05.704Z",
+    "updatedBy": "sgunturi"
   },
   {
     "approved": true,
@@ -1743,7 +1749,7 @@
     "approved": true,
     "bhajan_id": "xJcleCIQDtX",
     "language": "",
-    "lyrics": "Jaya Ganaraya Shri Ganaraya\\nJaya Ganaraya Shri Ganaraya Mangala Murthi Moraya\\nSiddhi Vinayaka Mangala Dhatha\\nAshta Vinayaka Mangala Dhayaka Mangala Murthi Moraya\\nSindhura Vadhana Pankaja Charana\\nSindhura Vadhana Pankaja Ramana Ganapathi Bappa Moraya",
+    "lyrics": "Jaya Ganaraya Shri Ganaraya\\nJaya Ganaraya Shri Ganaraya Mangala Murthi Moraya\\nSiddhi Vinayaka Mangala Dhatha\\nAshta Vinayaka Mangala Dayaka Mangala Murthi Moraya\\nSindhura Vadhana Pankaja Charana\\nSindhura Vadhana Pankaja Ramana Ganapathi Bappa Moraya",
     "title": "Jaya Ganaraya Shri Ganaraya",
     "translation": "Worship at the lotus feet of the eight forms of the elephant- faced Lord Ganesha who grants wishes and bestows prosperity and well-being."
   },
@@ -1783,15 +1789,17 @@
     "approved": true,
     "bhajan_id": "eJkZgAImwF7",
     "language": "",
-    "lyrics": "Jaya Jagadeesha Hare Jaya Govinda Hare\\nNithyananda Brahmananda Jaya Gopala Hare\\nArunachala Shiva Om Trishuladhari Shivom\\nHari Narayana Om Sai Narayana Om\\nJaya Devi Bharathi Vidhya Dhayini Annapoorna Mata Om",
-    "title": "Jaya Jagadeesha Hare Jaya Govindha Hare",
-    "translation": "Glory to the Lord of the Universe, Lord Govinda, the eternally and perpetually blissful One. Chant the name of the Lord of Arunachala, Lord Shiva, holding the Trishula (trident). Salutations to Mother Goddess Bharathi (Saraswathi), who bestows strength and knowledge."
+    "lyrics": "Jaya Jagadeesha Hare Jaya Govinda Hare\\nNithyananda Brahmananda Jaya Gopala Hare\\nArunachala Shiva Om Trishuladhari Shivom\\nHari Narayana Om Sai Narayana Om\\nJaya Devi Bharathi Vidya Dayini Annapoorna Mata Om",
+    "title": "Jaya Jagadeesha Hare Jaya Govinda Hare",
+    "translation": "Glory to the Lord of the Universe, Lord Govinda, the eternally and perpetually blissful One. Chant the name of the Lord of Arunachala, Lord Shiva, holding the Trishula (trident). Salutations to Mother Goddess Bharathi (Saraswati), who bestows strength and knowledge.",
+    "updatedAt": "2014-01-14T07:28:52.944Z",
+    "updatedBy": "sgunturi"
   },
   {
     "approved": true,
     "bhajan_id": "lylbxA87wFX",
     "language": "",
-    "lyrics": "Jaya Jaya Girija Bala Gajanana\\nJaya Shiva Shankara Parvati Nandana\\nVigna Vinashaka Vijaya Gajanana\\nSharavana Sevitha Sumukha Gajanana\\nTava Pada Sharanam Sharanam Gajanana",
+    "lyrics": "Jaya Jaya Girija Bala Gajanana\\nJaya Shiva Shankara Parvati Nandana\\nVighna Vinashaka Vijaya Gajanana\\nSharavana Sevitha Sumukha Gajanana\\nTava Pada Sharanam Sharanam Gajanana",
     "title": "Jaya Jaya Girija Bala Gajanana",
     "translation": "Salutations to Lord Ganesha, son of Girija (Parvati) and Shiva, destroyer of obstacles and bestower of success. We take refuge at the feet of pleasant, elephant-faced Gajanana, adored by Lord Subramanyam."
   },
@@ -2053,19 +2061,21 @@
   },
   {
     "approved": true,
+    "bhajan_id": "gy3gbRU7wtm",
+    "language": "",
+    "lyrics": "Krishna Rama Govinda Gokula Nandana Gopala\\nRama Krishna Govinda Jaya Brindavana Gopala\\nSai Krishna Govinda Parthi Pureeshwara Gopala\\nGopala Sai Gopala (2)\\nGopi Manohara Gokula Bala Sai Murari",
+    "title": "Krishna Rama Govinda Gokula Nandana Gopala",
+    "translation": "Different epithets of Lord Krishna are equated to Lord Sai.",
+    "updatedAt": "2014-01-14T07:27:59.176Z",
+    "updatedBy": "sgunturi"
+  },
+  {
+    "approved": true,
     "bhajan_id": "g1Tlb0LmPKX",
     "language": "",
     "lyrics": "Krishna Rama Govinda Narayana\\nKeshava Madhava Hari Narayana\\nKrishna Rama Govinda Narayana\\nShri Venu Gopala Krishna (2)\\nMadhava Madhusudana Narayana",
     "title": "Krishna Rama Govinda Narayana",
     "translation": "Chant the many names of the Lord: Krishna, Rama, Govinda, Narayana, Keshava, Madhava, Hari, Venu Gopala and Madhusudana."
-  },
-  {
-    "approved": true,
-    "bhajan_id": "gy3gbRU7wtm",
-    "language": "",
-    "lyrics": "Krishna Rama Govinda Gokula Nandhana Gopala\\nRama Krishna Govinda Jaya Brindhavana Gopala\\nSai Krishna Govinda Parthi Pureeshwara Gopala\\nGopala Sai Gopala (2)\\nGopi Manohara Gokula Bala Sai Murari",
-    "title": "Krishna Rama Govindha Gokula Nandhana Gopala",
-    "translation": "Different epithets of Lord Krishna are equated to Lord Sai."
   },
   {
     "approved": true,
@@ -2191,7 +2201,7 @@
     "approved": true,
     "bhajan_id": "g1dM08XvK7",
     "language": "",
-    "lyrics": "Maha Ganapathe Gajanana\\nUma Maheshwara Priya Nandhana\\nMaha Ganapathe Gajanana\\nGana Nayaka Vandhitha Charana\\nTava Charanam Bhava Bhaya Harana\\nUma Maheshwara Priya Nandhana",
+    "lyrics": "Maha Ganapathe Gajanana\\numa Maheshwara Priya Nandana\\nmaha Ganapathe Gajanana\\ngana Nayaka Vandhitha Charana\\ntava Charanam Bhava Bhaya Harana\\numa Maheshwara Priya Nandana",
     "title": "Maha Ganapathe Gajanana",
     "translation": "Take refuge at the feet of Lord Ganesha, dear son of Mother Uma and Lord Shiva, to ward off the fears of worldly existence."
   },
@@ -2289,8 +2299,8 @@
     "approved": true,
     "bhajan_id": "eyNgMR8Xvt7",
     "language": "",
-    "lyrics": "Mangala Dhayaka He Gananatha\\nPranava Swaroopa Vighna Vinasha\\nMangala Dhayaka He Gananatha\\nHe Shiva Nandhana Pahi Dhayala\\nParthi Purishwara Jagat Paripala\\nPranava Swaroopa Vighna Vinasha",
-    "title": "Mangala Dhayaka He Gananatha",
+    "lyrics": "Mangala Dayaka He Gananatha\\nPranava Swaroopa Vighna Vinasha\\nMangala Dayaka He Gananatha\\nHe Shiva Nandana Pahi Dhayala\\nParthi Purishwara Jagat Paripala\\nPranava Swaroopa Vighna Vinasha",
+    "title": "Mangala Dayaka He Gananatha",
     "translation": "Lord Ganesha, who bestows good fortune, is the form of sacred Pranava (Om), and is the remover of obstacles. Son of Shiva, protector of the poor and helpless, is Lord Sai of Parthi, the Lord and Protector of the Universe."
   },
   {
@@ -2497,7 +2507,7 @@
     "approved": true,
     "bhajan_id": "eJOmCU7vY7",
     "language": "",
-    "lyrics": "Narayana Narayana\\nNarayana Sai Narayana\\nGaruda Vahana Narayana\\nKalinga Nardhana Narayana\\nAbhaya Dhayaka Narayana\\nApadh Bandhava Narayana\\nNarayana Sai Narayana\\nNarayana Sathya Narayana",
+    "lyrics": "Narayana Narayana\\nNarayana Sai Narayana\\nGaruda Vahana Narayana\\nKalinga Nardhana Narayana\\nAbhaya Dayaka Narayana\\nApadh Bandhava Narayana\\nNarayana Sai Narayana\\nNarayana Sathya Narayana",
     "title": "Narayana Narayana",
     "translation": "Lord Sai Narayana who has eagle as His vehicle, annihilated the cobra, named Kalinga. He is the dispeller of fear and the refuge of those in need and in difficulties."
   },
@@ -2665,7 +2675,7 @@
     "approved": true,
     "bhajan_id": "gkpgmCLXvYQ",
     "language": "Hindi",
-    "lyrics": "Par Karo Uddhar Karo Prabhu Parthipuri Bhagwan\\nHare Ram Ram Ram Ghana Shyam Shyam Shyam Hey Sai Natha Bhagwan\\nDeena Dhayakara Karuna Murthi Kali Yuga Avathar Sai Bhagwan\\nAllah Sai Buddha Zoarastra Yeshu Kristu Bhagwan",
+    "lyrics": "Par Karo Uddhar Karo Prabhu Parthipuri Bhagwan\\nHare Ram Ram Ram Ghana Shyam Shyam Shyam Hey Sai Natha Bhagwan\\nDeena Dayakara Karuna Murthi Kali Yuga Avathar Sai Bhagwan\\nAllah Sai Buddha Zoarastra Yeshu Kristu Bhagwa",
     "title": "Par Karo Uddhar Karo Prabhu Parthipuri Bhagwan",
     "translation": "O Lord of Parthi, save me from the cycle of birth and death. Merciful Lord Sai Ram, incarnation of the Kali age, You are Lord Rama, Krishna, Allah, Buddha, Zoroaster, and Jesus."
   },
@@ -2753,7 +2763,7 @@
     "approved": true,
     "bhajan_id": "xkEAL7PF7",
     "language": "",
-    "lyrics": "Prathama Bhajore Ganapathi Sai\\nJai Jai Jai Jai Sai\\nBuddhi Pradhayaka He Gana Nayaka\\nGanapathi Sai He Sukhadayi\\nJai Jai Jai Jai Sai",
+    "lyrics": "Prathama Bhajore Ganapathi Sai\\nJai Jai Jai Jai Sai\\nBuddhi Pradayaka He Gana Nayaka\\nGanapathi Sai He Sukhadayi\\nJai Jai Jai Jai Sai",
     "title": "Prathama Bhajore Ganapathi Sai",
     "translation": "First we worship Lord Sai Gajanana, the Lord of the demi-gods, provider of happiness and liberation. Salutations to Lord Sai."
   },
@@ -2947,9 +2957,11 @@
     "approved": true,
     "bhajan_id": "e1veVRU7DF7",
     "language": "",
-    "lyrics": "Rama Krishna Govinda Narayana\\nNarayana Hari Narayana\\nRama Krishna Govinda Narayana\\nShri Lakshmi Ramana Narayana\\nOm Anantha Narayana (3)",
-    "title": "Rama Krishna Govindha Narayana",
-    "translation": "Chant the names of Lord Rama and Krishna and the eternal Lord Narayana, Lord of Lakshmi."
+    "lyrics": "Rama Krishna Govinda Narayana\\nNarayana Hari Narayana\\nRama Krishna Govinda Narayana\\nSri Lakshmi Ramana Narayana\\nOm Anantha Narayana (x3)",
+    "title": "Rama Krishna Govinda Narayana",
+    "translation": "Chant the names of Rama, Krishna and the eternal Lord Narayana, Lord of Lakshmi.",
+    "updatedAt": "2014-01-14T07:02:51.477Z",
+    "updatedBy": "sgunturi"
   },
   {
     "approved": true,
@@ -2963,9 +2975,11 @@
     "approved": true,
     "bhajan_id": "lyYxNC8mvKm",
     "language": "",
-    "lyrics": "Rama Namo Rama Namo Rama Namo Sai Rama Namo\\nDasharatha Nandhana Rama Namo\\nVasudeva Nandhana Krishna Namo\\nRama Namo Rama Namo Rama Namo Sai Rama Namo",
+    "lyrics": "Rama Namo Rama Namo Rama Namo Sai Rama Namo\\nDasharatha Nandana Rama Namo\\nVasudeva Nandana Krishna Namo\\nRama Namo Rama Namo Rama Namo Sai Rama Namo",
     "title": "Rama Namo Rama Namo Rama Namo Sai Rama Namo",
-    "translation": "Chant the name of Lord Rama, who is the son of King Dasharatha. Chant the name of Lord Krishna who is the dearest son of Vasudeva."
+    "translation": "Chant the name of Lord Rama, who is the son of King Dasharatha. Chant the name of Lord Krishna who is the dearest son of Vasudeva.",
+    "updatedAt": "2014-01-14T07:46:36.139Z",
+    "updatedBy": "sgunturi"
   },
   {
     "approved": true,
@@ -3003,7 +3017,7 @@
     "approved": true,
     "bhajan_id": "xJClNC8QPKm",
     "language": "",
-    "lyrics": "Rama Sumira Mana Rama Sumira Mana\\nRama Sumira Mana Ram\\nJanaki Vallabha Dasharatha Nandhana\\nRamachandra Shri Ram (2)\\nBhaja Mana Sita Ram Ram Bhaja Mana Sita Ram\\nBhaja Mana Radhe Shyam Shyam Bhaja Mana Radhe Shyam\\nBhaja Mana Sai Ram Ram Bhaja Mana Sai Ram",
+    "lyrics": "Rama Sumira Mana Rama Sumira Mana\\nrama Sumira Mana Ram\\njanaki Vallabha Dasharatha Nandana\\nramachandra Shri Ram (2)\\nbhaja Mana Sita Ram Ram Bhaja Mana Sita Ram\\nbhaja Mana Radhe Shyam Shyam Bhaja Mana Radhe Shyam\\nbhaja Mana Sai Ram Ram Bhaja Mana Sai Ram",
     "title": "Rama Sumira Mana Rama Sumira Mana",
     "translation": "O mind, chant the name and worship the name of Lord Ram, The beloved of Sita, and the Prince of King Dasharatha; of Lord Krishna (the beloved of Radha), and of Lord Sai Ram."
   },
@@ -3086,7 +3100,7 @@
     "approved": true,
     "bhajan_id": "xkUS0UmDt7",
     "language": "",
-    "lyrics": "Sadguru Namam Madhura Mayam\\nSundara Rupam Jyothir Mayam (Ati)\\nShyamala Vadanam Shanti Mayam\\nPrema Pradhayaka Pavana Namam\\nPapa Vinashaka Prabhu Namam\\nSada Bhajeham Sai Namam",
+    "lyrics": "Sadguru Namam Madhura Mayam\\nSundara Rupam Jyothir Mayam (ati)\\nShyamala Vadanam Shanti Mayam\\nPrema Pradayaka Pavana Namam\\nPapa Vinashaka Prabhu Namam\\nSada Bhajeham Sai Namam",
     "title": "Sadguru Namam Madhura Mayam",
     "translation": "Let us ever chant the name of the true Guru, suffused with sweetness, beauty, divine effulgence and peace. His sanctified name grants love and dispels sins."
   },
@@ -3638,9 +3652,11 @@
     "approved": true,
     "bhajan_id": "gky-80L7wFX",
     "language": "",
-    "lyrics": "Vanamali Radha Ramana Giridhari Govinda\\nNila Megha Sundara Narayana Govinda\\nVanamali Radha Ramana Giridhari Govinda\\nBhaktha Hrudhaya Mandhara Bhanukoti Sundara\\nNandha Nandha Gopa Vrindha Narayana Govinda\\nHari Narayana Govinda (8)\\nNarayana Narayana Narayana Narayana (7)\\nNila Megha Sundara Narayana Govinda",
-    "title": "Vanamali Radha Ramana Giridhari Govindha",
-    "translation": "The dark-hued Lord Krishna, the beloved of Radha, resides in the devotee's heart. He is the son of Nandha and His beauty equals the effulgence of a million suns."
+    "lyrics": "Vanamali Radha Ramana Giridhari Govinda\\nNeella Megha Sundara Narayana Govinda\\nVanamali Radha Ramana Giridhari Govinda\\nBhakta Hridaya Mandara Bhanukoti Sundara\\nNanda Nanda Gopa Vrinda Narayana Govinda",
+    "title": "Vanamali Radha Ramana Giridhari Govinda",
+    "translation": "The dark-hued Lord Krishna, the beloved of Radha, resides in the devotee's heart. He is the son of Nanda and His beauty equals the effulgence of a million suns.",
+    "updatedAt": "2014-01-14T07:27:17.663Z",
+    "updatedBy": "sgunturi"
   },
   {
     "approved": true,
@@ -3694,9 +3710,11 @@
     "approved": true,
     "bhajan_id": "xkgvRUmDYX",
     "language": "",
-    "lyrics": "Yadu Nandana Yashoda Bala\\nMadhava Keshava\\nYadu Nandhana Yashoda Bala\\nMathura Natha Mama Sai Natha\\nMandara Giridhari Madhusudhana He",
-    "title": "Yadu Nandhana Yashoda Bala",
-    "translation": "O delight of the Yadu lineage, son of Yashoda, You are the Lord of Mathura. You supported the Mandara mountain, and destroyed the demon Madhu. Lord Sai, I bow to you."
+    "lyrics": "Yadu Nandana Yashoda Bala\\nMadhava Keshava\\nYadu Nandana Yashoda Bala\\nMathura Natha Mama Sai Natha\\nMandara Giridhari Madhusudhana He",
+    "title": "Yadu Nandana Yashoda Bala",
+    "translation": "O delight of the Yadu lineage, son of Yashoda, You are the Lord of Mathura. You supported the Mandara mountain and destroyed the demon Madhu. Lord Sai, I bow to you.",
+    "updatedAt": "2014-01-14T07:47:48.520Z",
+    "updatedBy": "sgunturi"
   },
   {
     "approved": true,
