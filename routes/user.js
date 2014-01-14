@@ -13,7 +13,6 @@ module.exports = {
     },
     authenticate: passport.authenticate('local', {
         successRedirect: '/review',
-        successFlash: 'Logged in.',
         failureRedirect: '/login',
         failureFlash: true
     })
