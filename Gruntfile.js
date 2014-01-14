@@ -108,4 +108,5 @@ module.exports = function (grunt) {
 
     grunt.registerTask('production', ['build:master', 'release', 'deploy']);
     grunt.registerTask('production:minor', ['build:master', 'release:minor', 'deploy']);
+    grunt.registerTask('production:major', ['build:master', 'release:major', 'deploy']);
 };
