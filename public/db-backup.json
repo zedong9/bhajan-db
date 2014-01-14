@@ -99,9 +99,11 @@
     "approved": true,
     "bhajan_id": "ly3saL7wKX",
     "language": "Telugu",
-    "lyrics": "Allah Yesu Buddha Deva Antaru Neevae\\nMoula Sai Mahavira Nanaku Neevae\\nRama Krishna Shiva Rupa Dhaariyu Neevae\\nVedha Gita Grantha Mula Saramu Neevae\\nMadhamulanni Poojinchu Daivamu Neevae\\nSarva Dharma Priya Satya Sai Neevae\\nSairam Sairam Sairam Satya Sairam (2)",
-    "title": "Allah Yesu Buddha Deva Antaru Neevae",
-    "translation": "O Sairam! You are Allah, Jesus, Buddha, Mahavira and Guru Nanak. You took the forms of Rama, Krishna and Shiva. You are the essence of the Vedas, the Gita and the Granth Saheb (Sacred Book of the Sikhs). You are the One Lord worshipped by all the religions. You are Sathya Sai who loves all religions. We chant your name."
+    "lyrics": "Allah Yesu Buddha Deva Antaru Neeve\\nMaula Sai Mahavira Nanaku Neeve\\nRama Krishna Shiva Rupa Dhaariyu Neeve\\nVeda Gita Grantha Mula Saramu Neeve\\nMadhamulanni Poojinchu Daivamu Neeve\\nSarva Dharma Priya Satya Sai Neeve\\nSairam Sairam Sairam Satya Sairam (2)",
+    "title": "Allah Yesu Buddha Deva Antaru Neeve",
+    "translation": "O Sairam! You are Allah, Jesus, Buddha, Mahavira and Guru Nanak. You took the forms of Rama, Krishna and Shiva. You are the essence of the Vedas, the Gita and the Granth Saheb (Sacred Book of the Sikhs). You are the One Lord worshipped by all the religions. You are Sathya Sai who loves all religions. We chant your name.",
+    "updatedAt": "2014-01-14T05:07:23.195Z",
+    "updatedBy": "sgunturi"
   },
   {
     "approved": true,
@@ -3015,6 +3017,17 @@
   },
   {
     "approved": true,
+    "bhajan_id": "g1AqY7gbu",
+    "createdAt": "2014-01-14T02:36:39.196Z",
+    "language": "hindi",
+    "lyrics": "Ramakrishna Prabhu Tu Hey Ram Hey Ram\\nSai Krishna Prabhu Tu Sai Ram Sai Ram\\nEsu Pita Prabhu Tu Hey Ram Hey Ram\\nAllah Ishvara Tu Allah Ho Akbar\\nShirdi Sai Prabhu Tu Sai Ram Sai Ram",
+    "title": "Ramakrishna Prabhu Tu Hey Ram Hey Ram",
+    "translation": "You are Rama, Krishna, Allah, Jehovah, Shirdi Sai.",
+    "updatedAt": "2014-01-14T05:03:55.103Z",
+    "updatedBy": "sgunturi"
+  },
+  {
+    "approved": true,
     "bhajan_id": "x1HAI7PF7",
     "language": "",
     "lyrics": "Ranjani Niranjani Parthi Ranjani\\nSimha Vahini Sai Bhavani\\nRanjani Niranjani Parthi Ranjani\\nMatha Maheshwari Meena Lochani\\nKama Pradhayini Kathyayini\\nParthi Ranjani Mukthi Dhayini",
@@ -3204,6 +3217,17 @@
     "lyrics": "Sai Sundara Sundara\\nVyaghrambaradhara Hare Hari Hara\\nSai Sundara Sundara\\nAnanda Guna Mandira Sundara\\nNatana Sundara Bhuvana Sundara",
     "title": "Sai Sundara Sundara",
     "translation": "Worship the beautiful Lord Sai, who is Lord Hari (Vishnu) and Hara (Shiva) dressed in a tiger skin. Embodiment of bliss and Virtues, Sai Shiva is the beautiful cosmic dancer, in all three Worlds."
+  },
+  {
+    "approved": true,
+    "bhajan_id": "xyJgSdx-d",
+    "createdAt": "2014-01-14T03:08:47.350Z",
+    "language": "english",
+    "lyrics": "Sairam Hear My Call To You, Sairam Hear My Call\\nSairam, I Know You Must Hear My Call\\nIn My Heart is a Burning, Yearning For You\\nI Am Waiting, I Am Praying, I Am Calling To You",
+    "title": "Sairam Hear My Call",
+    "translation": "",
+    "updatedAt": "2014-01-14T05:05:28.660Z",
+    "updatedBy": "sgunturi"
   },
   {
     "approved": true,
@@ -3397,6 +3421,17 @@
     "title": "Shiva Shambho Shambho",
     "translation": "Let us bow to the Lord of Lords, Shiva, the destroyer of evil. He is the Lord of the destitute, who swallowed the poison to save His devotees.",
     "updatedAt": "2014-01-13T09:18:00.203Z",
+    "updatedBy": "sgunturi"
+  },
+  {
+    "approved": true,
+    "bhajan_id": "lJUo2F3xu",
+    "createdAt": "2014-01-13T20:02:00.019Z",
+    "language": "sanskrit",
+    "lyrics": "Shiva Shiva Hara Hara Bhola Maheswara Shambho Shankara\\nGanga Jatadhara Gauri Manohara Shambho Shankara\\nShiva Shiva Hara Hara Bhola Maheswara Shambho Shankara\\nVyagrambaradhara Chandra Kaladhara Shambho Shankara\\nHalahala Dhara Shaila Girishwara Shambho Shankara\\nGangajatadhara Gauri Manohara Shambho Shankara",
+    "title": "Shiva Shiva Hara Hara Bhola Maheswara Shambho Shankara",
+    "translation": "Glory to Shiva, who wears the Ganga in his hair and is the consort of Parvati. He wears a tiger skin and the moon adorns his hair, the lord of the mountains who swallowed poison for his devotees.",
+    "updatedAt": "2014-01-14T05:09:28.209Z",
     "updatedBy": "sgunturi"
   },
   {
