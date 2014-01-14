@@ -139,7 +139,7 @@ describe('Bhajan create', function () {
     before(function (done) {
         Bhajan.create({
             title: 'Test bhajan',
-            lyrics: 'test lyrics',
+            lyrics: 'test lyrics\nthis is line 2\nthis is line 3',
             test: test_id
         }, function (error, bhajan) {
             if (error) return done(error);
@@ -152,9 +152,9 @@ describe('Bhajan create', function () {
         expect(Bhajan.create).to.be.a('function');
     });
 
-    it('should insert provided data and return inserted row.', function () {
-        expect(created_bhajan.title).to.equal('Test bhajan');
-        expect(created_bhajan.lyrics).to.equal('test lyrics');
+    it('should sanitize provided data and return inserted row.', function () {
+        expect(created_bhajan.title).to.equal('Test Bhajan');
+        expect(created_bhajan.lyrics).to.equal('Test Lyrics\nThis Is Line 2\nThis Is Line 3');
     });
 
     it('should add a bhajan_id field.', function () {

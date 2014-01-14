@@ -16,4 +16,7 @@ block content
                 .form-group
                     label Translation
                     textarea.col-lg-12.form-control(type='text', rows='5', name='translation') !{bhajan.translation}
+            .checkbox: label
+                | Approved
+                input(type='checkbox' value='true', checked=(true === bhajan.approved ? 'checked' : undefined) name='approved')
             input.btn.btn-primary.pull-right(type='submit', value='Save')

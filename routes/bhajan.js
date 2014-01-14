@@ -21,7 +21,6 @@ module.exports = {
     },
 
     edit: function (req, res) {
-        if (!req.isAuthenticated()) return res.redirect('/login');
         var bhajan = req.body.bhajan;
         bhajan.lyrics = bhajan.lyrics.replace(/\\n/g, '&#13;');
         res.locals.title = 'Edit';
@@ -41,6 +40,14 @@ module.exports = {
             if (error) return next(error);
             req.flash('success', 'Your bhajan has been submitted for approval.');
             res.redirect('/');
+        });
+    },
+
+    review: function (req, res, next) {
+        Bhajan.search({approved: false}, function (error, result) {
+            if (error) return next(error);
+            res.locals.title = 'Review';
+            res.render('review', {result: result});
         });
     }
 };
