@@ -4,7 +4,7 @@ module.exports = {
     login: function (req, res) {
         res.locals.title = 'Login';
         res.locals.flash = {warning: req.flash('error')};
-        res.render('review');
+        res.render('login');
     },
     logout: function (req, res) {
         req.logout();
@@ -12,7 +12,7 @@ module.exports = {
         res.redirect('/');
     },
     authenticate: passport.authenticate('local', {
-        successRedirect: '/',
+        successRedirect: '/review',
         successFlash: 'Logged in.',
         failureRedirect: '/login',
         failureFlash: true
