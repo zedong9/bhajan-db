@@ -1,0 +1,15 @@
+extends default
+
+block content
+    if result.length > 0
+        table.table.table-hover
+            thead
+                th Title
+                th Date Added
+            tbody
+                for bhajan in result
+                    tr
+                        td: a(href='/edit/#{bhajan.bhajan_id}') #{bhajan.title}
+                        td #{bhajan.createdAt}
+    else
+        p No bhajans pending approval.

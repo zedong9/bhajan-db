@@ -2,6 +2,7 @@ var moment = require('moment');
 var mongodb = require('mongodb');
 var shortid = require('shortid');
 var _ = require('underscore');
+var _str = require('underscore.string');
 
 var db = require('./Database');
 
@@ -13,7 +14,8 @@ module.exports = {
     create: function (data, done) {
         if (!_.isFunction(done)) throw new Error('Callback not provided.');
         if (!data.lyrics) return done(new Error('Lyrics not provided.'));
-        data.lyrics = data.lyrics.replace(/\r\n/g, '\\n');
+        data.title = _str.titleize(data.title);
+        data.lyrics = _str.titleize(data.lyrics.replace(/\r\n/g, '\\n'));
         data.bhajan_id = shortid();
         data.createdAt = moment().toDate();
         data.approved = false;
@@ -31,6 +33,7 @@ module.exports = {
     */
     update: function (data, done) {
         if (!_.isFunction(done)) throw new Error('Callback not provided.');
+        data.approved = (data.approved === 'true');
         data.updatedAt = moment().toDate();
         if (data.lyrics) data.lyrics = data.lyrics.replace(/\r\n/g, '\\n');
         db.connect('bhajans', function (error, client, bhajans) {

@@ -4,7 +4,7 @@ module.exports = {
     login: function (req, res) {
         res.locals.title = 'Login';
         res.locals.flash = {warning: req.flash('error')};
-        res.render('login');
+        res.render('review');
     },
     logout: function (req, res) {
         req.logout();

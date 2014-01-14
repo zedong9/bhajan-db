@@ -11,6 +11,8 @@ var stylus = require('stylus');
 // Load route functions.
 var routes = require('./routes');
 
+var middleware = require('./middleware');
+
 // Load models.
 var models = require('./models');
 var Bhajan = models.Bhajan;
@@ -53,11 +55,7 @@ app.use(express.logger('dev'));
 passport.use(new LocalStrategy(User.validate));
 passport.serializeUser(User.serialize);
 passport.deserializeUser(User.deserialize);
-
-app.use(function (req, res, next) {
-    if (req.isAuthenticated()) res.locals.username = req.user.username;
-    next();
-});
+app.use(middleware.loadUser);
 
 app.configure('development', function () {
     // Error route to test error handling.
@@ -75,11 +73,7 @@ app.configure('development', function () {
 
 // Custom error handling for production.
 app.configure('production', function () {
-    app.use(function (err, req, res, next) {
-        if (err.status === 404) res.status(404).render('404');
-        else res.status(500).render('500');
-        console.log(err);
-    });
+    app.use(middleware.errorHandler);
 });
 
 // If param 'bhajan_id' is present in the route,
@@ -108,13 +102,14 @@ app.get('/', routes.index);
 // Routes for bhajan CRUD operations.
 app.get('/search', routes.bhajan.search);
 app.get('/bhajan/:bhajan_id', routes.bhajan.findOne);
-app.get('/edit/:bhajan_id', routes.bhajan.edit);
-app.put('/edit', routes.bhajan.update);
 app.get('/create', function (req, res) {
     res.locals.title = 'Add Bhajan';
     res.render('create');
 });
 app.post('/bhajan', routes.bhajan.create);
+app.get('/edit/:bhajan_id', middleware.requireAuthentication, routes.bhajan.edit);
+app.put('/edit', middleware.requireAuthentication, routes.bhajan.update);
+app.get('/review', middleware.requireAuthentication, routes.bhajan.review);
 
 // API routes to send data as JSON.
 app.get('/api/search/:search', routes.api.search);
