@@ -15,3 +15,4 @@ node_modules/
 public/stylesheets/css/
 
 db-credentials.json
+helpers.js
