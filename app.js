@@ -100,16 +100,16 @@ app.locals({
 app.get('/', routes.index);
 
 // Routes for bhajan CRUD operations.
-app.get('/search', routes.bhajan.search);
 app.get('/bhajan/:bhajan_id', routes.bhajan.findOne);
-app.get('/create', function (req, res) {
-    res.locals.title = 'Add Bhajan';
-    res.render('create');
-});
+app.get('/search', routes.bhajan.search);
+app.get('/browse', routes.bhajan.findAll);
+
+app.get('/create', function (req, res) { res.render('create', {title: 'Add Bhajan'}); });
 app.post('/bhajan', routes.bhajan.create);
+
+app.get('/review', middleware.requireAuthentication, routes.bhajan.review);
 app.get('/edit/:bhajan_id', middleware.requireAuthentication, routes.bhajan.edit);
 app.put('/edit', middleware.requireAuthentication, routes.bhajan.update);
-app.get('/review', middleware.requireAuthentication, routes.bhajan.review);
 
 // API routes to send data as JSON.
 app.get('/api/search/:search', routes.api.search);

@@ -9,6 +9,13 @@ module.exports = {
         res.render('bhajan', bhajan);
     },
 
+    findAll: function (req, res, next) {
+        Bhajan.search({approved: true, test: {$exists: 0}}, function (error, result) {
+            if (error) return next(error);
+            res.render('browse', {title: 'Browse All', result: result});
+        });
+    },
+
     search: function (req, res, next) {
         Bhajan.search(req.query, function (error, result) {
             if (error) return next(error);

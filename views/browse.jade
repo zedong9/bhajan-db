@@ -1,0 +1,10 @@
+extends default
+
+block content
+    for bhajan in result
+        a(href='/bhajan/#{bhajan.bhajan_id}', target='_blank'): p!= bhajan.title
+        hr
+    .text-center.text-muted.small
+        :markdown
+            Didn't find the bhajan you're looking for?
+            Help grow the database by [submitting a bhajan!](/create)
