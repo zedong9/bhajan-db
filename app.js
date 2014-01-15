@@ -38,6 +38,8 @@ app.use(express.session({secret: 'SECRET'}));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
+app.use(middleware.loadUser);
+app.use(app.router);
 app.use(stylus.middleware({
     src: __dirname + '/resources/stylesheets/',
     dest: __dirname + '/public/stylesheets/',
@@ -50,12 +52,12 @@ app.use(stylus.middleware({
     }
 }));
 app.use(express.static(path.join(__dirname, 'public'))); // Look in public directory if no other routes match.
+app.use(function (req, res) {res.status(404).render('404');});
 app.use(express.logger('dev'));
 
 passport.use(new LocalStrategy(User.validate));
 passport.serializeUser(User.serialize);
 passport.deserializeUser(User.deserialize);
-app.use(middleware.loadUser);
 
 app.configure('development', function () {
     // Error route to test error handling.
@@ -67,6 +69,7 @@ app.configure('development', function () {
         req.flash('success', 'This is a flash message.');
         res.redirect('/');
     });
+
     // Use Express's error handler.
     app.use(express.errorHandler());
 });
@@ -120,11 +123,6 @@ app.get('/api/bhajan/:bhajan_id', routes.api.findOne);
 app.get('/login', routes.user.login);
 app.post('/login', routes.user.authenticate);
 app.get('/logout', routes.user.logout);
-
-// Handle all other routes with 404.
-app.get('*', function (req, res, next) {
-    res.status(404).render('404');
-});
 
 // If app.js is started by itself, start the server.
 if (!module.parent) {
