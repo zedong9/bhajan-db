@@ -10,7 +10,7 @@ if (process.env.TRAVIS_SECURE_ENV_VARS) {
     mongoURI = 'mongodb://' + process.env.DB_USER + ':' + process.env.DB_SECRET + '@paulo.mongohq.com:10080/bhajan-db';
 } else {
     var credentials = require('./db-credentials.json');
-    mongoURI = 'mongodb://' + credentials.username + ':' + credentials.password + '@paulo.mongohq.com:10080/bhajan-db';
+    mongoURI = 'mongodb://' + credentials.username + ':' + credentials.password + '@alex.mongohq.com:10016/bhajan-dev';
 }
 
 module.exports = {
