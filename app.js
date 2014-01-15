@@ -52,8 +52,9 @@ app.use(stylus.middleware({
     }
 }));
 app.use(express.static(path.join(__dirname, 'public'))); // Look in public directory if no other routes match.
-app.use(function (req, res) {res.status(404).render('404');});
 app.use(express.logger('dev'));
+app.use(function (req, res, next) {res.status(404).render('404');});
+app.use(middleware.errorHandler);
 
 passport.use(new LocalStrategy(User.validate));
 passport.serializeUser(User.serialize);
@@ -69,14 +70,6 @@ app.configure('development', function () {
         req.flash('success', 'This is a flash message.');
         res.redirect('/');
     });
-
-    // Use Express's error handler.
-    app.use(express.errorHandler());
-});
-
-// Custom error handling for production.
-app.configure('production', function () {
-    app.use(middleware.errorHandler);
 });
 
 // If param 'bhajan_id' is present in the route,
