@@ -15,7 +15,12 @@ module.exports = {
         if (!_.isFunction(done)) throw new Error('Callback not provided.');
         if (!data.lyrics) return done(new Error('Lyrics not provided.'));
         data.title = _str.titleize(data.title);
-        data.lyrics = _str.titleize(data.lyrics.replace(/\r\n/g, '\\n'));
+        data.lyrics = _.chain(data.lyrics.split(/\r\n/))
+            .map(function (val) {
+                return _str.titleize(val);
+            }).reduceRight(function (a, b) {
+                return _str.join('\\n', b, a);
+            }).value();
         data.bhajan_id = shortid();
         data.createdAt = moment().toDate();
         data.approved = false;
