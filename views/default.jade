@@ -14,25 +14,27 @@ html
         script(type='text/javascript', src='//cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js')
         script(type='text/javascript', src='//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.2/js/bootstrap.min.js')
         link(rel='stylesheet', href='/stylesheets/css/bootstrap.css')
-        script.
-            function search_redirect(query) {
-                if (query.charAt(query.length - 1) !== '=') {
-                    window.location = '/search?' + query;
-                }
-            }
 
-            $(document).ready(function() {
-                $('#navbar-search').on('click', function () {
-                    search_redirect($.param({lyrics: $('#navbar-query').val()}));
-                });
-
-                $('#navbar-query').keydown(function (event) {
-                    if (event.keyCode === 13) {
-                        event.preventDefault();
-                        search_redirect($.param({lyrics: $('#navbar-query').val()}));
+        block javascript
+            script.
+                function search_redirect(query) {
+                    if (query.charAt(query.length - 1) !== '=') {
+                        window.location = '/search?' + query;
                     }
+                }
+
+                $(document).ready(function() {
+                    $('#navbar-search').on('click', function () {
+                        search_redirect($.param({lyrics: $('#navbar-query').val()}));
+                    });
+
+                    $('#navbar-query').keydown(function (event) {
+                        if (event.keyCode === 13) {
+                            event.preventDefault();
+                            search_redirect($.param({lyrics: $('#navbar-query').val()}));
+                        }
+                    });
                 });
-            });
     body
         nav.navbar.navbar-default
             .row

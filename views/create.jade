@@ -1,17 +1,32 @@
 extends default
 
+append javascript
+    script.
+        $(document).ready(function () {
+            var $lyrics = $('#lyrics');
+            var lyrics_focus = false;
+
+            $('#title').keyup(function() {
+                if (!lyrics_focus) $lyrics.val(this.value);
+            });
+
+            $lyrics.on('focus', function () {
+                lyrics_focus = true;
+            })
+        });
+
 block content
     .row: .col-lg-12
         form(action='/bhajan', method='post')
             .form-group
                 label Title
-                input.col-lg-12.form-control(type='text', name='title')
+                input.col-lg-12.form-control#title(type='text', name='title')
             .form-group
                 label Lyrics
-                textarea.col-lg-12.form-control(type='text', rows='10', name='lyrics', required='required' placeholder='Use Enter key to split lines')
+                textarea.col-lg-12.form-control#lyrics(type='text', rows='10', name='lyrics', required='required' placeholder='Use Enter key to split lines')
             .form-group
                 label Translation
-                textarea.col-lg-12.form-control(type='text', rows='5', name='translation')
+                textarea.col-lg-12.form-control#translation(type='text', rows='5', name='translation')
             .form-group
                 label(for='language') Language
                 select.form-control(name='language', data-placeholder='Language...', required='required')
