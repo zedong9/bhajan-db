@@ -10,23 +10,24 @@ var stylus = require('stylus');
 
 // Load route functions.
 var routes = require('./routes');
-
 var middleware = require('./middleware');
 
 // Load models.
 var models = require('./models');
 var Bhajan = models.Bhajan;
-var Quote = models.Quote;
+var quote = models.Quote();
 var User = models.User;
 
-// Load app info.
+// Load app helpers.
 var info = require('./package.json');
+var logger = require('./log');
 
 // Initialize app.
 var app = express();
 
 // Configure app for all environments.
 // These middleware functions are processed in the order that they are included.
+logger.debug('Starting application middleware...');
 app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname + '/views'); // set views directory.
 app.set('view engine', 'jade'); // use jade to render views.
@@ -39,6 +40,11 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
 app.use(middleware.loadUser);
+app.use(function (req, res, next) {
+    if (req.path.split('/')[1] !== 'stylesheets') logger.info(req.method, req.originalUrl);
+    logger.trace(req.method, req.originalUrl);
+    next();
+});
 app.use(app.router);
 app.use(stylus.middleware({
     src: __dirname + '/resources/stylesheets/',
@@ -52,9 +58,9 @@ app.use(stylus.middleware({
     }
 }));
 app.use(express.static(path.join(__dirname, 'public'))); // Look in public directory if no other routes match.
-app.use(express.logger('dev'));
 app.use(function (req, res, next) {res.status(404).render('404');});
 app.use(middleware.errorHandler);
+logger.debug('Application middleware loaded.');
 
 passport.use(new LocalStrategy(User.validate));
 passport.serializeUser(User.serialize);
@@ -89,7 +95,7 @@ app.locals({
     year: moment().format('YYYY'),
     version: info.version,
     repo: info.repository.url,
-    quote: Quote()
+    quote: quote
 });
 
 // Route for homepage.
@@ -120,7 +126,9 @@ app.get('/logout', routes.user.logout);
 // If app.js is started by itself, start the server.
 if (!module.parent) {
     http.createServer(app).listen(app.get('port'), function(){
-        console.log('Express server listening on port ' + app.get('port') + ' in ' + app.get('env') + ' mode.');
+        logger.info('Express server listening on port ' + app.get('port') + ' in ' + app.get('env') + ' mode.');
+        logger.info('"%s" -- swami', quote);
+        logger.info();
     });
 // Otherwise (for use in test suites), export app variable.
 } else module.exports = app;
