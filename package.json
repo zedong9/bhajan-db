@@ -30,7 +30,9 @@
     "connect-flash": "~0.1.1",
     "password-hash": "~1.2.1",
     "marked": "~0.3.0",
-    "require-all": "0.0.8"
+    "require-all": "0.0.8",
+    "tracer": "~0.6.2",
+    "chalk": "~0.4.0"
   },
   "devDependencies": {
     "async": "0.2.9",

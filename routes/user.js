@@ -2,6 +2,7 @@ var passport = require('passport');
 
 module.exports = {
     login: function (req, res) {
+        if (req.user) return res.redirect('/review');
         res.locals.title = 'Login';
         res.locals.flash = {warning: req.flash('error')};
         res.render('login');

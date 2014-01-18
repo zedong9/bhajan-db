@@ -30,7 +30,7 @@ After entering the password, you should be good to go. Fire up the app:
 npm start
 
 > node app.js
-Express server listening on port 3000
+4:19:06 PM CST [INFO] Express server listening on port 3000 in development mode.
 ```
 BhajanDB should be running at localhost:3000.
 
