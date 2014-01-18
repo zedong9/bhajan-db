@@ -1,6 +1,1 @@
-module.exports = {
-    Bhajan: require('./Bhajan'),
-    Database: require('./Database'),
-    Quote: require('./Quote'),
-    User: require('./User')
-};
+module.exports = require('require-all')(__dirname);
