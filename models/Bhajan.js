@@ -147,5 +147,25 @@ module.exports = {
                 return done(null, result);
             });
         });
+    },
+
+    destroy: function (bhajan_id, done) {
+        logger.debug('Destroy method called.');
+        logger.trace('Bhajan: %s', bhajan_id);
+
+        if (!_.isFunction(done)) throw new Error('Callback not provided.');
+
+        db.connect('bhajans', function (error, client, bhajans) {
+            if (error) return done(error);
+            bhajans.remove({bhajan_id: bhajan_id}, function (error, result) {
+                client.close();
+
+                logger.debug('Deleted bhajan %s', bhajan_id);
+                logger.trace('Data: %j', result);
+
+                if (error) return done(error);
+                return done(null, result);
+            });
+        });
     }
 };

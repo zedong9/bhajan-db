@@ -1,8 +1,18 @@
 extends default
 
+append javascript
+    script.
+        $(document).ready(function () {
+            $('#delete_button').on('click', function () {
+                $.post('/bhajan/!{bhajan.bhajan_id}', {_method: 'delete'}, function (response) {
+                    window.location.replace(response.location);
+                });
+            });
+        });
+
 block content
-    .row: .col-lg-12
-        form(action='/edit', method='post')
+    form(action='/edit', method='post')
+        .row: .col-lg-12
             input(type='hidden', name='_method', value='put')
             input(type='hidden', name='updatedBy', value='#{username}')
             input(type='hidden', name='bhajan_id' value='#{bhajan.bhajan_id}')
@@ -19,4 +29,20 @@ block content
             .checkbox: label
                 | Approved
                 input(type='checkbox' value='true', checked=(true === bhajan.approved ? 'checked' : undefined) name='approved')
+        .row.spacer: .col-lg-12
+            input.btn.btn-danger.pull-left(type='submit', data-toggle='modal', data-target='#delete_modal' value='Delete')
             input.btn.btn-primary.pull-right(type='submit', value='Save')
+
+block modal
+    .modal.fade#delete_modal(tabindex='-1', role='dialog', aria-hidden='true', aria-labelledby='label')
+        .modal-dialog: .modal-content
+            .modal-header
+                button.close(type='button', data-dismiss='modal', aria-hidden='true') &times;
+                h4.modal-title#label Delete Bhajan
+            .modal-body
+                p Are you sure you want to delete this bhajan? This cannot be undone.
+            .modal-footer
+                button.btn.btn-default(type='button', data-dismiss='modal') Cancel
+                button.btn.btn-danger#delete_button(type='submit') Delete
+
+

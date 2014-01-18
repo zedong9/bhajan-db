@@ -56,5 +56,13 @@ module.exports = {
             res.locals.title = 'Review';
             res.render('review', {result: result});
         });
+    },
+
+    delete: function (req, res, next) {
+        Bhajan.destroy(req.body.bhajan.bhajan_id, function (error, result) {
+            if (error) return next(error);
+            req.flash('success', 'The bhajan has been deleted.');
+            res.send({location: '/review'});
+        });
     }
 };

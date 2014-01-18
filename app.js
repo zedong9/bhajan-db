@@ -108,6 +108,7 @@ app.get('/browse', routes.bhajan.findAll);
 
 app.get('/create', function (req, res) { res.render('create', {title: 'Add Bhajan'}); });
 app.post('/bhajan', routes.bhajan.create);
+app.delete('/bhajan/:bhajan_id', middleware.requireAuthentication, routes.bhajan.delete);
 
 app.get('/review', middleware.requireAuthentication, routes.bhajan.review);
 app.get('/edit/:bhajan_id', middleware.requireAuthentication, routes.bhajan.edit);
