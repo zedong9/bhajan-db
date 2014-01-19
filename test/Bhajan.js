@@ -10,6 +10,7 @@ var db = models.Database;
 var unique_id_1 = uuid.v4();
 var unique_id_2 = uuid.v4();
 var unique_id_3 = uuid.v4();
+var unique_id_4 = uuid.v4();
 var unique_title = uuid.v4();
 
 var test_id = 'test_' + moment().format('MMDDYYYY_HH:mm:ss:SSS');
@@ -24,7 +25,8 @@ before(function (done) {
             {bhajan_id: unique_id_1, title: unique_title, test: test_id, approved: true},
             {bhajan_id: unique_id_2, title: unique_title, test: test_id, approved: true},
             {bhajan_id: unique_id_3, title: unique_title, test: test_id, approved: false},
-            {bhajan_id: 'not searchable', title: 'not searchable', test: test_id}
+            {bhajan_id: 'not searchable', title: 'not searchable', test: test_id},
+            {bhajan_id: unique_id_4, title: 'Destroy test', test: test_id, approved: true}
         ], function (error) {
             if (error) return done(error);
             client.close();
@@ -33,7 +35,7 @@ before(function (done) {
     });
 });
 
-describe('Bhajan findOne', function () {
+describe('Bhajan#findOne', function () {
     it('should be a function.', function () {
         expect(Bhajan.findOne).to.be.a('function');
     });
@@ -62,7 +64,7 @@ describe('Bhajan findOne', function () {
     });
 });
 
-describe('Bhajan search', function () {
+describe('Bhajan#search', function () {
     it('should be a function.', function () {
         expect(Bhajan.search).to.be.a('function');
     });
@@ -104,7 +106,7 @@ describe('Bhajan search', function () {
     });
 });
 
-describe('Bhajan update', function () {
+describe('Bhajan#update', function () {
     var updated_bhajan;
 
     before(function (done) {
@@ -133,7 +135,7 @@ describe('Bhajan update', function () {
     });
 });
 
-describe('Bhajan create', function () {
+describe('Bhajan#create', function () {
     var created_bhajan;
 
     before(function (done) {
@@ -174,6 +176,31 @@ describe('Bhajan create', function () {
         Bhajan.create({title: uuid.v4()}, function (error, result) {
             expect(error).to.exist;
             next();
+        });
+    });
+});
+
+describe('Bhajan#destroy', function () {
+    before(function (done) {
+        Bhajan.destroy(unique_id_4, function (error, result) {
+            if (error) return done(error);
+            done();
+        });
+    });
+
+    it('should be a function.', function () {
+        expect(Bhajan.destroy).to.be.a('function');
+    });
+
+    it('should delete a bhajan from the database.', function (next) {
+        db.connect('bhajans', function (error, client, bhajans) {
+            if (error) return next(error);
+            bhajans.find({bhajan_id: unique_id_4}).toArray(function (error, result) {
+                if (error) return next(error);
+                client.close();
+                expect(result.length).to.equal(0);
+                next();
+            });
         });
     });
 });
