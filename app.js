@@ -20,7 +20,7 @@ var User = models.User;
 
 // Load app helpers.
 var info = require('./package.json');
-var logger = require('./log');
+var logger = require('./log')('info');
 
 // Initialize app.
 var app = express();
@@ -41,7 +41,7 @@ app.use(passport.session());
 app.use(flash());
 app.use(middleware.loadUser);
 app.use(function (req, res, next) {
-    if (req.path.split('/')[1] !== 'stylesheets') logger.info(req.method, req.originalUrl);
+    if (['stylesheets', 'img'].indexOf(req.path.split('/')[1]) === -1) logger.info(req.method, req.originalUrl);
     logger.trace(req.method, req.originalUrl);
     next();
 });

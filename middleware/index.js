@@ -1,4 +1,4 @@
-var logger = require('../log');
+var logger = require('../log')('info');
 
 module.exports = {
     requireAuthentication: function (req, res, next) {

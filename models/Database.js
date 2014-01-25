@@ -1,7 +1,7 @@
 var mongodb = require('mongodb');
 var _ = require('underscore');
 
-var logger = require('../log');
+var logger = require('../log')('info');
 var mongoURI;
 
 if (process.env.TRAVIS_SECURE_ENV_VARS) {

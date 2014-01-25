@@ -2,10 +2,14 @@ extends default
 
 block content
     +alerts(flash)
+    if username
+        .row: .col-lg-12
+            a.pull-left(href='/review')
+                span.glyphicon.glyphicon-arrow-left
+                |  Review
+            a.pull-right(href='/edit/#{bhajan_id}') Edit
     .row
         .col-lg-10: h3 #{title}
-        if username
-            .col-lg-2: a.text-right(href='/edit/#{bhajan_id}') Edit
     .row: .col-lg-12 !{lyrics}
     br
     unless language === 'english'

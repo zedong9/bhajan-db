@@ -5,7 +5,7 @@ var _ = require('underscore');
 var _str = require('underscore.string');
 
 var db = require('./Database');
-var logger = require('../log');
+var logger = require('../log')('info');
 
 module.exports = {
     /*
