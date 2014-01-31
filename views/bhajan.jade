@@ -8,9 +8,7 @@ block content
                 span.glyphicon.glyphicon-arrow-left
                 |  Review
             a.pull-right(href='/edit/#{bhajan_id}') Edit
-    .row
-        .col-lg-10: h3 #{title}
-    .row: .col-lg-12 !{lyrics}
-    br
+    .row: .col-lg-12: h3 #{title}
+    .row.spacer: .col-lg-12: p !{lyrics}
     unless language === 'english'
-        p.text-muted #{translation}
+        .row.spacer: .col-lg-12: p.text-muted #{translation}
