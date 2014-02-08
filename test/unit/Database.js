@@ -1,9 +1,6 @@
 var expect = require('chai').expect;
 var request = require('superagent');
-var db = require('../models/Database');
-
-// Allow linting to pass.
-/*jshint expr: true*/
+var db = require('../../models').Database;
 
 describe('Database', function () {
     it('should connect without error.', function (done) {
