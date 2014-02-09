@@ -3,7 +3,7 @@ var moment = require('moment');
 var uuid = require('node-uuid');
 var _ = require('underscore');
 
-var models = require('../models');
+var models = require('../../models');
 var Bhajan = models.Bhajan;
 var db = models.Database;
 
@@ -14,9 +14,6 @@ var unique_id_4 = uuid.v4();
 var unique_title = uuid.v4();
 
 var test_id = 'test_' + moment().format('MMDDYYYY_HH:mm:ss:SSS');
-
-// Allow linting to pass.
-/*jshint expr: true*/
 
 before(function (done) {
     db.connect('bhajans', function (error, client, bhajans) {
@@ -161,7 +158,7 @@ describe('Bhajan', function () {
         });
 
         it('should add a bhajan_id field.', function () {
-            expect(created_bhajan.bhajan_id).to.exist;
+            expect(created_bhajan).to.have.property('bhajan_id');
         });
 
         it('should not approve the bhajan by default.', function () {
@@ -169,13 +166,13 @@ describe('Bhajan', function () {
         });
 
         it('should add a createdAt field.', function () {
-            expect(created_bhajan.createdAt).to.exist;
+            expect(created_bhajan).to.have.property('createdAt');
             expect(moment().diff(moment(created_bhajan.createdAt))).to.be.below(5000);
         });
 
         it('should fail if lyrics are not provided.', function (next) {
             Bhajan.create({title: uuid.v4()}, function (error, result) {
-                expect(error).to.exist;
+                expect(error);
                 next();
             });
         });
